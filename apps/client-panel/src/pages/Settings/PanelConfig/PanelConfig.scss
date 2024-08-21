@@ -1,0 +1,13 @@
+.panel-config {
+	&__form {
+		max-width: 400px;
+		.ant-form-item {
+			margin-bottom: 15px;
+			.ant-form-item-label {
+				padding-bottom: 5px;
+				font-weight: 500;
+				font-size: 14px;
+			}
+		}
+	}
+}

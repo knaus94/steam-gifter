@@ -1,0 +1,5 @@
+-- DropIndex
+DROP INDEX "IDX_BOT__ACCOUNT_NAME";
+
+-- DropIndex
+DROP INDEX "IDX_BOT__STEAM_ID_64";

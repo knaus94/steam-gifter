@@ -1,0 +1,5 @@
+mutation PanelProductDelete($productId: Int!) {
+	panelProductDelete(productId: $productId) {
+		result
+	}
+}

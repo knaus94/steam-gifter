@@ -1,0 +1,57 @@
+.bots__buttons {
+	display: flex;
+	gap: 24px;
+	&-create {
+		margin-right: auto;
+	}
+}
+
+.form-bots {
+	margin-top: 24px;
+	margin-bottom: 24px;
+
+	&__item {
+		margin-bottom: 10px;
+		width: 100%;
+	}
+	.ant-input-number {
+		width: 100%;
+	}
+	.ant-form-item-label {
+		font-weight: 600;
+		font-size: 16px;
+	}
+	.upload-wrap {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color: rgba(0, 0, 0, 0.88);
+		svg {
+			width: 15px;
+			height: 15px;
+			margin-bottom: 10px;
+		}
+	}
+	&__parce-wrap {
+		display: flex;
+		gap: 24px;
+		align-items: center;
+		button {
+			margin-top: 20px;
+		}
+	}
+	&__img {
+		width: 150px;
+		height: 150px;
+		object-fit: cover;
+		border-radius: 20px;
+	}
+	&__default-img {
+		width: 150px;
+		height: 150px;
+		border-radius: 20px;
+
+		background-color: rgba(232, 232, 232, 0.88);
+	}
+}

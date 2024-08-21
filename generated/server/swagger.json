@@ -1,0 +1,170 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+        "/api/digiseller/{userId}": {
+            "get": {
+                "operationId": "DigisellerController_getRedirect_get",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "operationId": "DigisellerController_getRedirect_post",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "put": {
+                "operationId": "DigisellerController_getRedirect_put",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "DigisellerController_getRedirect_delete",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "patch": {
+                "operationId": "DigisellerController_getRedirect_patch",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "options": {
+                "operationId": "DigisellerController_getRedirect_options",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "head": {
+                "operationId": "DigisellerController_getRedirect_head",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "search": {
+                "operationId": "DigisellerController_getRedirect_search",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/digiseller": {
+            "get": {
+                "operationId": "DigisellerController_getRedirectAll_get",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "operationId": "DigisellerController_getRedirectAll_post",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "put": {
+                "operationId": "DigisellerController_getRedirectAll_put",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "DigisellerController_getRedirectAll_delete",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "patch": {
+                "operationId": "DigisellerController_getRedirectAll_patch",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "options": {
+                "operationId": "DigisellerController_getRedirectAll_options",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "head": {
+                "operationId": "DigisellerController_getRedirectAll_head",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "search": {
+                "operationId": "DigisellerController_getRedirectAll_search",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+    "info": {
+        "title": "steam-gift",
+        "version": "2.1.0",
+        "contact": {}
+    },
+    "tags": [],
+    "servers": [],
+    "components": {
+        "securitySchemes": {
+            "bearer": {
+                "scheme": "bearer",
+                "bearerFormat": "JWT",
+                "type": "http"
+            }
+        },
+        "schemas": {}
+    }
+}

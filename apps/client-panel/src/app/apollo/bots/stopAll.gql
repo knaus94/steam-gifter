@@ -1,0 +1,5 @@
+mutation PanelStopAllBots {
+	panelStopAllBots {
+		result
+	}
+}

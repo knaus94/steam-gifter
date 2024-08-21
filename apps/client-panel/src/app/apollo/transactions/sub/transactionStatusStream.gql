@@ -1,0 +1,12 @@
+subscription PanelTransactionStatusStream {
+	PanelTransactionStatusStream {
+		createdAt
+		errMsg
+		event
+		id
+		status
+		transaction {
+			id
+		}
+	}
+}

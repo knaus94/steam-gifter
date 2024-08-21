@@ -1,0 +1,5 @@
+mutation PanelUpdatePassword($args: InputUserPanelUpdatePasswordArgs!) {
+	panelUpdatePassword(args: $args) {
+		result
+	}
+}

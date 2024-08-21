@@ -1,0 +1,25 @@
+.product-info {
+	display: flex;
+	gap: 32px;
+	width: 100%;
+	margin-top: 32px;
+	&__image {
+		width: 308px;
+		height: 225px;
+		border-radius: 16px;
+		flex-shrink: 0;
+		img {
+			width: 100%;
+			height: 100%;
+			border-radius: 16px;
+			object-fit: cover;
+		}
+	}
+	.default-img {
+		width: 308px;
+		height: 225px;
+		border-radius: 16px;
+		flex-shrink: 0;
+		background-color: #f3f7ff;
+	}
+}

@@ -1,0 +1,48 @@
+.transaction-error {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(243, 247, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 69px 70px 0px 70px;
+
+    &__icon-error {
+        margin-bottom: 32px;
+    }
+    &__title {
+        margin-bottom: 16px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 120%;
+        color: #fe4133;
+    }
+    &__text {
+        margin-bottom: 32px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: #34373c;
+    }
+    &__btn {
+        border-radius: 8px;
+        background-color: #fe4133;
+        color: #fff;
+        padding: 15px 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+}

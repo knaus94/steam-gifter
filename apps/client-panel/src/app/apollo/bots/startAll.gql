@@ -1,0 +1,5 @@
+mutation PanelStartAllBots {
+	panelStartAllBots {
+		result
+	}
+}

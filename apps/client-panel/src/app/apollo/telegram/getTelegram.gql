@@ -1,0 +1,13 @@
+query PanelTelegramConfig {
+	panelTelegramConfig {
+		statusChangeNotification
+		statusChangeChatId
+		id
+		botToken
+		balanceThreshold
+		balanceNotification
+		balanceChatId
+		productPricesUpdatedNotification
+		productPricesUpdatedChatId
+	}
+}

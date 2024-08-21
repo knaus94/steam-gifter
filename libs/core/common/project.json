@@ -1,0 +1,20 @@
+{
+	"name": "core-common",
+	"$schema": "../../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "libs/core/common/src",
+	"projectType": "library",
+	"targets": {
+		"lint": {
+			"executor": "@nx/linter:eslint",
+			"outputs": [
+				"{options.outputFile}"
+			],
+			"options": {
+				"lintFilePatterns": [
+					"libs/core/common/**/*.ts"
+				]
+			}
+		}
+	},
+	"tags": []
+}

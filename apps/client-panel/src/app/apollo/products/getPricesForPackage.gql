@@ -1,0 +1,9 @@
+query GetPricesForPackage($packageId: Int!) {
+	panelProductSteamPackageInfo(packageId: $packageId) {
+		name
+		prices {
+			region
+			price
+		}
+	}
+}

@@ -1,0 +1,39 @@
+.products {
+	&__wrap-identifier {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		justify-content: space-between;
+		.identifier {
+			width: 100%;
+		}
+		button {
+			margin-top: 20px;
+		}
+	}
+	&__region-identifier {
+		display: flex;
+		flex-direction: column;
+	}
+	&__wrap-price {
+		display: flex;
+		align-items: center;
+		.ant-form-item {
+			width: 225px;
+		}
+		&_checkbox {
+			margin-top: -25px;
+			margin-left: 30px;
+		}
+	}
+	&__region-label-wrap {
+		font-weight: 600;
+		font-size: 14px;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 10px;
+		&_auto {
+			margin-left: 160px;
+		}
+	}
+}

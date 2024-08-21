@@ -1,0 +1,9 @@
+query GetPricesForBundle($bundleId: Int!) {
+	panelProductSteamBundleInfo(bundleId: $bundleId) {
+		name
+		prices {
+			region
+			price
+		}
+	}
+}

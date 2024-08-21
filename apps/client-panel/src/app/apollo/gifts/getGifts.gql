@@ -1,0 +1,37 @@
+query GetGifts($args: InputDigisellerProductPanelArgs!) {
+	panelDigisellerProducts(args: $args) {
+		total
+		records {
+			digisellerId
+			editionSelection
+			editions {
+				bots {
+					botRegions
+					region {
+						id
+						name
+					}
+				}
+				id
+				name
+				product {
+					autoSync
+					id
+					identifier
+					isBundle
+					name
+					prices {
+						price
+						region
+					}
+				}
+			}
+			id
+			isDisabled
+			name
+			previewUrl
+			createdAt
+			updatedAt
+		}
+	}
+}

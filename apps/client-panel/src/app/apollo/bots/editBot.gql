@@ -1,0 +1,17 @@
+mutation PanelBotUpdate($panelBotUpdateId: Int!, $args: InputBotPanelUpdateArgs!) {
+	panelBotUpdate(id: $panelBotUpdateId, args: $args) {
+		steamId64
+		status
+		login
+		id
+		balance
+		errCode
+		errMsg
+		proxy {
+			address
+			port
+			username
+			password
+		}
+	}
+}

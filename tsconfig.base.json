@@ -1,0 +1,153 @@
+{
+	"compileOnSave": false,
+	"compilerOptions": {
+		"rootDir": ".",
+		"sourceMap": true,
+		"moduleResolution": "node",
+		"target": "es2015",
+		"module": "esnext",
+		"lib": [
+			"es2017",
+			"dom"
+		],
+		"baseUrl": ".",
+		"declaration": false,
+		"removeComments": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true,
+		"incremental": true,
+		"skipLibCheck": true,
+		"noImplicitAny": false,
+		"strictBindCallApply": false,
+		"forceConsistentCasingInFileNames": false,
+		"noFallthroughCasesInSwitch": false,
+		"importHelpers": true,
+		"skipDefaultLibCheck": true,
+		"esModuleInterop": true,
+		"strictPropertyInitialization": false,
+		"strictNullChecks": true,
+		"paths": {
+			"@generated/*": [
+				"generated/*"
+			],
+			"@libs/auth/common": [
+				"libs/auth/common/src/index.ts"
+			],
+			"@libs/auth/server": [
+				"libs/auth/server/src/index.ts"
+			],
+			"@libs/auth/server/*": [
+				"libs/auth/server/src/*"
+			],
+			"@libs/bot/server": [
+				"libs/bot/server/src/index.ts"
+			],
+			"@libs/bot/server/*": [
+				"libs/bot/server/src/*"
+			],
+			"@libs/config/common": [
+				"libs/config/common/src/index.ts"
+			],
+			"@libs/config/server": [
+				"libs/config/server/src/index.ts"
+			],
+			"@libs/core/common": [
+				"libs/core/common/src/index.ts"
+			],
+			"@libs/core/server": [
+				"libs/core/server/src/index.ts"
+			],
+			"@libs/core/server/*": [
+				"libs/core/server/src/*"
+			],
+			"@libs/custom-injector/server": [
+				"libs/custom-injector/server/src/index.ts"
+			],
+			"@libs/digiseller/common": [
+				"libs/digiseller/common/src/index.ts"
+			],
+			"@libs/digiseller/server": [
+				"libs/digiseller/server/src/index.ts"
+			],
+			"@libs/digiseller/server/*": [
+				"libs/digiseller/server/src/*"
+			],
+			"@libs/health/server": [
+				"libs/health/server/src/index.ts"
+			],
+			"@libs/product/server": [
+				"libs/product/server/src/index.ts"
+			],
+			"@libs/product/server/*": [
+				"libs/product/server/src/*"
+			],
+			"@libs/proxy/common": [
+				"libs/proxy/common/src/index.ts"
+			],
+			"@libs/proxy/common/*": [
+				"libs/proxy/common/src/*"
+			],
+			"@libs/proxy/server": [
+				"libs/proxy/server/src/index.ts"
+			],
+			"@libs/proxy/server/*": [
+				"libs/proxy/server/src/*"
+			],
+			"@libs/region/server": [
+				"libs/region/server/src/index.ts"
+			],
+			"@libs/region/server/*": [
+				"libs/region/server/src/*"
+			],
+			"@libs/sdk-prisma/server": [
+				"libs/sdk-prisma/server/src/index.ts"
+			],
+			"@libs/sdk-prisma/server/*": [
+				"libs/sdk-prisma/server/src/*"
+			],
+			"@libs/slack/common": [
+				"libs/slack/common/src/index.ts"
+			],
+			"@libs/slack/server": [
+				"libs/slack/server/src/index.ts"
+			],
+			"@libs/steam-store-web-api/*": [
+				"libs/steam-store-web-api/src/*"
+			],
+			"@libs/telegram/server": [
+				"libs/telegram/server/src/index.ts"
+			],
+			"@libs/telegram/server/*": [
+				"libs/telegram/server/src/*"
+			],
+			"@libs/transaction/common": [
+				"libs/transaction/common/src/index.ts"
+			],
+			"@libs/transaction/server": [
+				"libs/transaction/server/src/index.ts"
+			],
+			"@libs/transaction/server/*": [
+				"libs/transaction/server/src/*"
+			],
+			"@libs/user/server": [
+				"libs/user/server/src/index.ts"
+			],
+			"@libs/user/server/*": [
+				"libs/user/server/src/*"
+			],
+			"@prisma/*": [
+				"prisma/*"
+			]
+		},
+		"typeRoots": [
+			"./node_modules/@types",
+			"./types"
+		]
+	},
+	"exclude": [
+		"node_modules",
+		"tmp",
+		"generated"
+	]
+}

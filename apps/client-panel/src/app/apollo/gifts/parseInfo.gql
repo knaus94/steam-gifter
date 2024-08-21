@@ -1,0 +1,8 @@
+query ParseDigisellerProductInfo($digisellerId: Int!) {
+	panelDigisellerParseProductInfo(digisellerId: $digisellerId) {
+		name
+		preview
+		editionEnabled
+		editions
+	}
+}

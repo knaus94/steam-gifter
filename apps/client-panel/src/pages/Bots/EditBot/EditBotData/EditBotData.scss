@@ -1,0 +1,76 @@
+.edit-bot__file {
+	width: 100px;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	color: #1677ff;
+	padding: 10px 12px;
+	border: 1px dotted silver;
+	background-color: rgba(0, 0, 0, 0.02);
+	margin-top: 5px;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: border-color 0.3s ease;
+
+	svg {
+		width: 30px;
+		height: 30px;
+	}
+	&:hover {
+		border: 1px dotted #1677ff;
+		transition: border-color 0.3s ease;
+	}
+	&.open {
+		border: none;
+		width: 40px;
+		height: 40px;
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+}
+
+.edit-bot {
+	&__image {
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+	&__delete-icon {
+		margin-top: 5px;
+		color: #d6281f;
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+	&__format {
+		margin-top: 5px;
+	}
+	.ant-form-item-label {
+		font-weight: 600;
+		font-size: 16px;
+	}
+	.upload-wrap {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color: rgba(0, 0, 0, 0.88);
+		svg {
+			width: 15px;
+			height: 15px;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.edit-bot__file--wrapper {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}

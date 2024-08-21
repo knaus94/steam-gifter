@@ -1,0 +1,5 @@
+mutation PanelTransactionUpdateStatus($transactionId: Int!, $args: InputTransactionPanelUpdateStatusArgs!) {
+	panelTransactionUpdateStatus(transactionId: $transactionId, args: $args) {
+		result
+	}
+}

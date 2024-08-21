@@ -1,0 +1,115 @@
+.status {
+    width: 563px;
+    height: 524px;
+    background-color: #f3f7ff;
+    border-radius: 16px;
+    padding: 32px;
+    position: relative;
+    &__title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 120%;
+        color: #34373c;
+        margin-bottom: 24px;
+    }
+    &__list {
+    }
+}
+
+.list-status {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    &__item {
+        display: flex;
+    }
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__number {
+        margin-right: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(147.99deg, rgba(147, 156, 189, 0.3) -21.62%, rgba(147, 156, 189, 0) 94.77%);
+        position: relative;
+    }
+
+    &__info {
+        color: #758097;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    &__item:not(:last-child) &__number::before {
+        content: '';
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(180deg, rgba(147, 156, 189, 0.5) 0%, rgba(147, 156, 189, 0) 100%);
+    }
+
+    &__item.active &__number {
+        border: 1px solid #1d51fe;
+        background: linear-gradient(140.45deg, rgba(29, 81, 254, 0.2) -14.26%, rgba(29, 81, 254, 0) 107.34%), url('../../images/flag.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        color: transparent;
+        font-size: 0;
+    }
+    &__createdAr {
+        color: #758097;
+    }
+    &__item.current {
+        .list-status__number {
+            color: #fff;
+            background-color: #1d51fe;
+            font-size: 16px;
+        }
+        .list-status__createAt {
+            color: #34373c;
+        }
+        .list-status__info {
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 18px;
+            color: #1d51fe;
+        }
+    }
+
+    &__item.current:not(:last-child) &__number::before {
+        content: '';
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(180deg, #3b85e0 0%, rgba(59, 133, 224, 0) 87.93%);
+    }
+    &__item.current:not(:last-child):not(:first-child) &__number::after {
+        content: '';
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(180deg, rgba(29, 81, 254, 0) 0%, #1d51fe 100%);
+    }
+    &__createAt {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        color: #758097;
+    }
+}

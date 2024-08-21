@@ -1,0 +1,27 @@
+.gifts-table {
+	margin-top: 24px;
+	&__default-img {
+		width: 75px;
+		height: 75px;
+		background-color: rgb(237, 237, 237);
+		border-radius: 50%;
+	}
+	&__img {
+		width: 75px;
+		height: 75px;
+		border-radius: 50%;
+		object-fit: cover;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.column_3 {
+		max-width: 300px;
+	}
+	&__name {
+		margin-bottom: 10px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}

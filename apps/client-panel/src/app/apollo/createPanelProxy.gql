@@ -1,0 +1,11 @@
+mutation PanelCreateProxy($args: InputProxyPanelCreateArgs!) {
+	panelCreateProxy(args: $args) {
+		username
+		port
+		password
+		id
+		countBots
+		address
+		isValid
+	}
+}

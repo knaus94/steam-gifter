@@ -1,0 +1,105 @@
+.header__link {
+    flex-grow: 1;
+    overflow: hidden;
+    display: flex;
+    transition: 0.3s;
+    background: #e8eefa;
+    border-radius: 8px;
+    margin-right: 32px;
+    position: relative;
+    padding-right: 16px;
+    border: 2px solid transparent;
+    &.active {
+        border: 2px solid #1d51fe;
+    }
+
+    .link__status {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        width: 130px;
+        background: linear-gradient(270deg, #e8eefa 39.87%, rgba(232, 238, 250, 0) 100%);
+        padding-right: 16px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        button {
+            outline: none;
+            border: none;
+            background: transparent;
+            padding: 5px 10px;
+            padding-right: 0;
+            display: flex;
+            cursor: pointer;
+            transition: 0.2s;
+            align-items: center;
+            justify-content: center;
+            &.loader {
+                cursor: default;
+                svg {
+                    animation: circle 1s linear infinite;
+                }
+            }
+            @keyframes circle {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+    .header__link-icon {
+        padding: 0 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    input {
+        flex-grow: 1;
+        overflow: hidden;
+        padding: 15px 0;
+        outline: none;
+        border: none;
+        background: transparent;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 120%;
+        color: #34373c;
+        font-family: Montserrat, sans-serif;
+    }
+    &.error {
+        border: 2px solid #fe4133;
+        .link__status {
+            // svg {
+            //     path {
+            //         stroke: #fe4133;
+            //     }
+            // }
+        }
+    }
+    .cross-icon {
+        width: 30px;
+        height: 30px;
+        stroke: #34373c;
+    }
+    .pencil-icon {
+        stroke: black;
+    }
+    .ant-input-disabled {
+        background-color: transparent;
+        color: black;
+    }
+}
+.ant-input:focus,
+.ant-input:hover {
+    border: none;
+
+    box-shadow: none;
+}

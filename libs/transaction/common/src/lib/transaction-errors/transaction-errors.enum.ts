@@ -1,0 +1,17 @@
+export enum TransactionErrorsEnum {
+	UnknownError = 'UnknownError',
+	TransactionGettingError = 'TransactionGettingError',
+	TransactionNotFound = 'TransactionNotFound',
+	RegionFieldNotFound = 'RegionFieldNotFound',
+	RegionInvalid = 'RegionInvalid',
+	SteamLinkFieldNotFound = 'SteamLinkFieldNotFound',
+	AlreadyHaveTransaction = 'AlreadyHaveTransaction',
+	ProductNotFound = 'ProductNotFound',
+	EditionFieldNotFound = 'EditionFieldNotFound',
+	EditionInvalid = 'EditionInvalid',
+	InvoiceDuplicated = 'InvoiceDuplicated',
+	BotNotFound = 'BotNotFound',
+	TransactionResendLimit = 'TransactionResendLimit',
+	SteamLinkNotValid = 'SteamLinkNotValid',
+	FriendRequestCooldown = 'FriendRequestCooldown',
+}

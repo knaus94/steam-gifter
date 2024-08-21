@@ -1,0 +1,123 @@
+.gifts {
+	&__edition-wrap {
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid rgb(208, 208, 208);
+	}
+	&__create-form_checkbox-wrap {
+		display: flex;
+	}
+	&__one-region {
+		display: flex;
+		gap: 15px;
+	}
+	&__disable-wrap {
+		display: flex;
+
+		&-input {
+			width: 400px;
+			margin-right: 15px;
+		}
+		.parse-btn {
+			margin-left: 24px;
+			margin-top: 30px;
+		}
+	}
+	&__name {
+		width: 600px;
+	}
+
+	&__create-form {
+		&_name {
+			width: 230px;
+			display: inline-block;
+		}
+		&_product {
+			width: 150px;
+		}
+		&_region {
+			.ant-select {
+				width: 120px;
+				margin-right: 10px;
+			}
+		}
+		&_regions {
+			min-width: 150px;
+			flex-grow: 1;
+		}
+	}
+	&-form {
+		&__main-wrap {
+			display: flex;
+			gap: 15px;
+			// width: 1000px;
+		}
+		&__regions-wrap {
+			.ant-space {
+				height: 45px;
+			}
+		}
+	}
+	&__create__syncPrice-wrap {
+		width: 100%;
+		margin-left: 40px;
+	}
+	&__create__syncPrice-data {
+		display: flex;
+		align-items: center;
+		margin-bottom: 20px;
+		margin-top: -20px;
+		.ant-input-number-suffix {
+			margin-right: 35px;
+		}
+		.ant-input-number-affix-wrapper {
+			margin-right: 20px;
+		}
+		.ant-input-number-handler-wrap {
+			margin-right: -18px;
+		}
+		.ant-input-number {
+			width: 120px !important;
+			margin-right: 20px;
+		}
+		&_before {
+			display: block;
+			width: 140px;
+		}
+
+		&_after {
+			width: 190px;
+		}
+		.ant-select {
+			width: 100px;
+			margin-left: 20px;
+		}
+	}
+
+	&__create-avatarwrap {
+		display: flex;
+		.form-bots__item {
+			width: auto;
+		}
+	}
+	&__create-default {
+		font-weight: 500;
+		margin-bottom: 15px;
+	}
+}
+.form-bots__img {
+	min-width: 150px;
+	min-height: 150px;
+}
+.upload-wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: rgba(0, 0, 0, 0.88);
+	svg {
+		width: 15px;
+		height: 15px;
+		margin-bottom: 10px;
+	}
+}

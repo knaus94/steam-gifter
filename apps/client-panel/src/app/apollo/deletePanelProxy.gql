@@ -1,0 +1,5 @@
+mutation PanelDeleteProxy($proxyId: Int!) {
+    panelDeleteProxy(proxyId: $proxyId) {
+        result
+    }
+}

@@ -1,0 +1,13 @@
+mutation PanelProductUpdate($productId: Int!, $args: InputProductPanelUpdateArgs!) {
+	panelProductUpdate(productId: $productId, args: $args) {
+		autoSync
+		id
+		identifier
+		isBundle
+		name
+		prices {
+			region
+			price
+		}
+	}
+}

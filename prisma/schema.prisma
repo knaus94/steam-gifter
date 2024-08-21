@@ -1,0 +1,256 @@
+generator client {
+    provider      = "prisma-client-js"
+    binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+generator json {
+    provider  = "prisma-json-types-generator"
+    namespace = "PrismaJson"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("POSTGRES_URL")
+}
+
+model Bot {
+    id              Int             @id(map: "PK_BOT") @default(autoincrement())
+    accountName     String
+    login           String          @unique(map: "UQ_BOT__LOGIN")
+    avatarUrl       String?
+    steamId64       String          @unique(map: "UQ_BOT__STEAM_ID_64")
+    password        String
+    sharedSecret    String
+    balance         Float           @default(0.00)
+    reservedBalance Float           @default(0.00)
+    region          RegionCodeEnum  @default(RU)
+    proxyId         Int?
+    proxy           Proxy?          @relation(fields: proxyId, references: id, onDelete: SetNull, map: "FX_BOT__PROXY_ID")
+    status          BotStatusEnum   @default(STOPPED)
+    errCode         BotErrCodeEnum?
+    errMsg          String?
+    transactions    Transaction[]
+
+    @@index([login], name: "IDX_BOT__LOGIN")
+    @@index([region], name: "IDX_BOT__REGION")
+    @@index([balance], name: "IDX_BOT__BALANCE")
+    @@index([reservedBalance], name: "IDX_BOT__RESERVED_BALANCE")
+    @@index([status], name: "IDX_BOT__STATUS")
+}
+
+enum BotStatusEnum {
+    STARTING
+    RUNNING
+    STOPPED
+    ERROR
+}
+
+enum BotErrCodeEnum {
+    AUTHENTICATION_FAILED
+    DISCONNECTED
+    ACCOUNT_LIMITATIONS
+}
+
+model Config {
+    id            Int     @id(map: "PK_CONFIG") @default(autoincrement())
+    skypeLink     String?
+    supportLink   String?
+    telegramLogin String?
+    vkLink        String?
+    email         String?
+    discordLink   String?
+}
+
+model TelegramConfig {
+    id                               Int     @id(map: "PK_TELEGRAM_CONFIG") @default(autoincrement())
+    botToken                         String?
+    balanceNotification              Boolean @default(false)
+    balanceChatId                    String?
+    balanceThreshold                 Float   @default(0.00)
+    statusChangeNotification         Boolean @default(false)
+    statusChangeChatId               String?
+    productPricesUpdatedNotification Boolean @default(false)
+    productPricesUpdatedChatId       String?
+}
+
+model DigisellerConfig {
+    id                        Int                @id(map: "PK_DIGISELLER_CONFIG") @default(autoincrement())
+    /// [TranslationType]
+    profileLinkFieldName      Json
+    /// [TranslationType]
+    regionFieldName           Json
+    /// [TranslationType]
+    editionSelectionFieldName Json
+    apiKey                    String?
+    sellerId                  Int?
+    token                     String?
+    tokenUpdatedAt            DateTime?
+    regions                   DigisellerRegion[]
+
+    @@unique([apiKey, sellerId], map: "UQ_DIGISELLER_CONFIG__API_KEY_WITH_SELLER_ID")
+}
+
+model DigisellerRegion {
+    id                           Int                            @id(map: "PK_DIGISELLER_REGION") @default(autoincrement())
+    configId                     Int
+    config                       DigisellerConfig               @relation(fields: [configId], references: [id], onDelete: Restrict, map: "FK_DIGISELLER_REGION__CONFIG_ID")
+    name                         String
+    DigisellerProductEditionBots DigisellerProductEditionBots[]
+
+    @@unique([configId, name], map: "UQ_DIGISELLER_REGION__CONFIG_ID_WITH_NAME")
+}
+
+model DigisellerProduct {
+    id               Int                        @id(map: "PK_DIGISELLER_PRODUCT") @default(autoincrement())
+    isDisabled       Boolean                    @default(false)
+    digisellerId     Int                        @unique(map: "UQ_DIGISELLER_PRODUCT__DIGISELLER_ID")
+    editionSelection Boolean                    @default(false)
+    /// [TranslationType]
+    name             Json
+    previewUrl       String?
+    syncPrice        Boolean                    @default(false)
+    syncPricePercent Float                      @default(100)
+    syncPriceRegion  RegionCodeEnum             @default(RU)
+    createdAt        DateTime                   @default(now())
+    updatedAt        DateTime                   @updatedAt
+    editions         DigisellerProductEdition[]
+}
+
+model DigisellerProductEdition {
+    id                  Int                            @id(map: "PK_DIGISELLER_PRODUCT_PACKAGE_EDITION") @default(autoincrement())
+    digisellerProductId Int
+    digisellerProduct   DigisellerProduct              @relation(fields: digisellerProductId, references: id, onDelete: Cascade, map: "FK_DIGISELLER_PRODUCT_PACKAGE_EDITION__DIGISELLER_PRODUCT_ID")
+    isDefault           Boolean                        @default(false)
+    name                String?
+    productId           Int
+    product             Product                        @relation(fields: productId, references: id, onDelete: Cascade, map: "FK_DIGISELLER_PRODUCT_PACKAGE_EDITION__PRODUCT_ID")
+    transactions        Transaction[]
+    bots                DigisellerProductEditionBots[]
+    isDeleted           Boolean                        @default(false)
+}
+
+model DigisellerProductEditionBots {
+    id         Int                      @id(map: "PK_DIGISELLER_PRODUCT_PACKAGE_EDITION_BOTS") @default(autoincrement())
+    editionId  Int
+    edition    DigisellerProductEdition @relation(fields: editionId, references: id, onDelete: Cascade, map: "FK_DIGISELLER_PRODUCT_PACKAGE_EDITION_BOTS__EDITION_ID")
+    regionId   Int
+    region     DigisellerRegion         @relation(fields: regionId, references: id, onDelete: Cascade, map: "FK_DIGISELLER_PRODUCT_PACKAGE_EDITION_BOTS__REGION_ID")
+    botRegions RegionCodeEnum[]
+}
+
+model Product {
+    id                       Int                        @id @default(autoincrement())
+    name                     String
+    isBundle                 Boolean                    @default(false)
+    identifier               Int
+    /// [RegionPricesType]
+    prices                   Json
+    autoSync                 RegionCodeEnum[]
+    DigisellerProductEdition DigisellerProductEdition[]
+
+    @@unique([isBundle, identifier], map: "UQ_PRODUCT__IS_BUNDLE_WITH_IDENTIFIER")
+}
+
+model Proxy {
+    id       Int     @id(map: "PK_PROXY") @default(autoincrement())
+    address  String
+    port     Int
+    username String?
+    password String?
+    isValid  Boolean @default(true)
+    bots     Bot[]
+
+    @@unique([address, port], map: "UQ_PROXY__ADDRESS_WITH_PORT")
+}
+
+enum RegionCodeEnum {
+    UA
+    RU
+    KZ
+    TR
+    US
+    EU
+    AR
+}
+
+model TransactionPaymentDetails {
+    id          Int          @id(map: "PK_TRANSACTION_PAYMENT_DETAILS") @default(autoincrement())
+    uniqCode    String       @unique(map: "UQ_TRANSACTION_PAYMENT_DETAILS__UNIQ_CODE")
+    invoice     Int          @unique(map: "UQ_TRANSACTION_PAYMENT_DETAILS__INVOICE")
+    transaction Transaction?
+}
+
+model TransactionStatusLogs {
+    id            Int                   @id(map: "PK_TRANSACTION_STATUS_LOG") @default(autoincrement())
+    transactionId Int
+    transaction   Transaction           @relation(fields: transactionId, references: id, onDelete: Cascade, map: "FK_TRANSACTION_STATUS_LOG__TRANSACTION_ID")
+    status        TransactionStatusEnum
+    event         TransactionEventEnum?
+    errMsg        String?
+    createdAt     DateTime              @default(now())
+}
+
+enum TransactionEventEnum {
+    FAIL
+    FRIEND_TIMEOUT
+    FRIEND_REQUEST_CANCELED
+    PURCHASE_INFO_IS_NULL
+    PURCHASE_INFO_NOT_AVAILABLE
+    BOT_IS_OFFLINE
+    GIFT_DECLINED
+    PROFILE_LINK_NOT_VALID
+    FAILED_GET_STEAM_ID
+    BOT_NOT_FOUND
+    FRIEND_REQUEST_FAIL
+    RESEND
+}
+
+model Transaction {
+    id               Int                       @id(map: "PK_TRANSACTION") @default(autoincrement())
+    paymentDetailsId Int                       @unique(map: "UQ_TRANSACTION__PAYMENT_DETAILS_ID")
+    paymentDetails   TransactionPaymentDetails @relation(fields: paymentDetailsId, references: id, onDelete: Restrict, map: "FK_TRANSACTION__PAYMENT_DETAILS_ID")
+    editionId        Int
+    edition          DigisellerProductEdition  @relation(fields: editionId, references: id, onDelete: Cascade, map: "FK_TRANSACTION__EDITION_ID")
+    profileLink      String
+    steamId64        String?
+    botId            Int?
+    bot              Bot?                      @relation(fields: botId, references: id, onDelete: SetNull, map: "FK_TRANSACTION__BOT_ID")
+    reservedSum      Float
+    region           String?
+    /// [TransactionPurchaseInfoType]
+    purchaseInfo     Json?
+    status           TransactionStatusEnum     @default(CREATED)
+    sendAttempts     Int                       @default(3)
+    logs             TransactionStatusLogs[]
+    createdAt        DateTime                  @default(now())
+    updatedAt        DateTime                  @updatedAt
+}
+
+enum TransactionStatusEnum {
+    CREATED
+    FRIEND_REQUEST_SENT
+    PROCESS
+    SENT_GIFT
+    SUCCESS
+    ERROR
+}
+
+model UserLoginLogs {
+    id        Int      @id(map: "PK_USER_LOGIN_LOGS") @default(autoincrement())
+    userId    Int
+    user      User     @relation(fields: [userId], references: [id], onDelete: Cascade, map: "FK_USER_LOGIN_LOGS__USER_ID")
+    ipAddress String?
+    userAgent String?
+    createdAt DateTime @default(now())
+
+    @@index([userId], map: "IDX_USER_LOGIN_LOGS__USER_ID")
+}
+
+model User {
+    id             Int             @id(map: "PK_USER") @default(autoincrement())
+    email          String          @unique(map: "UQ_USER__EMAIL")
+    hashedPassword String
+    createdAt      DateTime        @default(now())
+    updatedAt      DateTime        @updatedAt
+    loginLogs      UserLoginLogs[]
+}

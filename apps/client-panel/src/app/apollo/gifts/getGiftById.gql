@@ -1,0 +1,31 @@
+query GetGiftById($digisellerProductId: Int!) {
+	panelDigisellerProduct(id: $digisellerProductId) {
+		previewUrl
+		name
+		isDisabled
+		createdAt
+		updatedAt
+		id
+		editions {
+			bots {
+				botRegions
+				region {
+					id
+					name
+				}
+			}
+			id
+			name
+			isDefault
+			product {
+				id
+				name
+			}
+		}
+		editionSelection
+		digisellerId
+		syncPrice
+		syncPricePercent
+		syncPriceRegion
+	}
+}

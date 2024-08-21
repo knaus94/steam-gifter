@@ -1,0 +1,8 @@
+subscription TransactionStatusStream($args: InputTransactionArgs!) {
+    TransactionStatusStream(args: $args) {
+        createdAt
+        event
+        id
+        status
+    }
+}

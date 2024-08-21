@@ -1,0 +1,28 @@
+.gift-edit {
+	&__title {
+		font-size: 16px;
+		font-weight: 600;
+	}
+	&__info {
+		display: flex;
+	}
+	&__created {
+		margin-left: auto;
+		margin-right: 30px;
+		display: flex;
+		flex-direction: column;
+	}
+	&__updated {
+		display: flex;
+		flex-direction: column;
+	}
+	&__created-title,
+	&__updated-title {
+		font-size: 16px;
+		font-weight: 500;
+	}
+}
+
+.ant-select-dropdown .ant-select-item.noSelect {
+	color: rgba(255, 0, 0, 0.5);
+}

@@ -1,0 +1,85 @@
+{
+	"name": "client-panel",
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "apps/client-panel/src",
+	"projectType": "application",
+	"targets": {
+		"build": {
+			"executor": "@nx/webpack:webpack",
+			"outputs": [
+				"{options.outputPath}"
+			],
+			"defaultConfiguration": "production",
+			"options": {
+				"compiler": "babel",
+				"outputPath": "dist/apps/client-panel",
+				"index": "apps/client-panel/src/index.html",
+				"baseHref": "/",
+				"main": "apps/client-panel/src/main.tsx",
+				"tsConfig": "apps/client-panel/tsconfig.app.json",
+				"assets": [
+					"apps/client-panel/src/favicon.ico",
+					"apps/client-panel/src/assets"
+				],
+				"styles": [
+					"apps/client-panel/src/styles.scss"
+				],
+				"scripts": [],
+				"isolatedConfig": true,
+				"webpackConfig": "apps/client-panel/webpack.config.js",
+			},
+			"configurations": {
+				"development": {
+					"extractLicenses": false,
+					"optimization": false,
+					"sourceMap": true,
+					"vendorChunk": true
+				},
+				"production": {
+					"fileReplacements": [
+						{
+							"replace": "apps/client-panel/src/environments/environment.ts",
+							"with": "apps/client-panel/src/environments/environment.prod.ts"
+						}
+					],
+					"optimization": true,
+					"outputHashing": "all",
+					"sourceMap": false,
+					"namedChunks": false,
+					"extractLicenses": true,
+					"vendorChunk": false,
+					"deployUrl": "/panel/"
+				}
+			}
+		},
+		"serve": {
+			"executor": "@nx/webpack:dev-server",
+			"defaultConfiguration": "development",
+			"options": {
+				"buildTarget": "client-panel:build",
+				"hmr": true
+			},
+			"configurations": {
+				"development": {
+					"buildTarget": "client-panel:build:development"
+				},
+				"production": {
+					"buildTarget": "client-panel:build:production",
+					"hmr": false
+				}
+			}
+		},
+		"lint": {
+			"executor": "@nx/linter:eslint",
+			"outputs": [
+				"{options.outputFile}"
+			],
+			"options": {
+				"lintFilePatterns": [
+					"apps/client-panel/**/*.{ts,tsx,js,jsx}"
+				]
+			}
+		}
+	},
+	"tags": []
+}

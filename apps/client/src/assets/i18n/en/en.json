@@ -1,0 +1,76 @@
+{
+	"header": {
+		"your_order": "Your Order",
+		"control": "Order Information and Control"
+	},
+	"body": {
+		"time_buy": "Purchase Time:",
+		"code": "Unique Product Code:",
+		"region": "Region:",
+		"bot": "Bot:",
+		"banner1": {
+			"head": "Leave a review and get a free game!",
+			"details": "Return to purchase"
+		},
+		"banner2": {
+			"head": "More interesting content on Telegram",
+			"details": "Click or scan the QR code to open"
+		},
+		"copy": "Copy",
+		"copied": "Copied",
+		"region_type": {
+			"AR": "Argentina",
+			"EU": "Europe",
+			"KZ": "Kazakhstan",
+			"RU": "Russia",
+			"TR": "Turkey",
+			"UA": "Ukraine",
+			"US": "United States"
+		}
+	},
+	"footer": {
+		"title": "Facing issues?",
+		"feedback": "Contact the seller!"
+	},
+	"history": {
+		"request_again": "Request Reverification",
+		"title": "Order Execution History",
+		"step1": "Unique code successfully received. Expect a friend request from our bot.",
+		"step2": "Friend request sent to the specified profile. Waiting for the invitation to be accepted.",
+		"step3": "Friend request accepted. Expect the item to be sent to your account.",
+		"step4": "Item successfully sent. Waiting for activation.",
+		"step5": "Item successfully activated! Enjoy your purchase."
+	},
+	"error": "Error",
+	"errors": {
+		"FAIL": "Failed to send the gift.",
+		"FRIEND_TIMEOUT": "Friend addition timeout.",
+		"PURCHASE_INFO_IS_NULL": "No purchase information available.",
+		"PURCHASE_INFO_NOT_AVAILABLE": "Information not available.",
+		"BOT_IS_OFFLINE": "Bot is offline.",
+		"GIFT_DECLINED": "Gift declined.",
+		"PROFILE_LINK_NOT_VALID": "Check the entered link format.",
+		"FAILED_GET_STEAM_ID": "Error getting Steam account identifier.",
+		"BOT_NOT_FOUND": "Failed to find a bot.",
+		"FRIEND_REQUEST_FAIL": "Failed to send friend request.",
+		"RESEND": "Resend failed."
+	},
+	"messages": {
+		"request_sent": "Request for resend sent."
+	},
+	"message": "Notification",
+	"success_copy": "Successfully copied",
+	"success_order": "Order completed\nEnjoy your game!",
+	"order_back": "Return to the store website",
+	"toast": {
+		"title": "Error",
+		"text": "An error occurred..."
+	},
+	"reload": "Reload the page",
+	"error_code": "Mandatory parameter is missing",
+	"our": "Steam Gift Delivery Service",
+	"recaptcha": {
+		"code": "Captcha Error",
+		"message": "Failed to pass the captcha. Please try again."
+	}
+}

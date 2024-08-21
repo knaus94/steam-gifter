@@ -1,0 +1,81 @@
+version: '3'
+networks:
+    steam-gift-network:
+        ipam:
+            config:
+                - subnet: '172.19.0.0/16'
+
+volumes:
+    steam-gift-postgresql:
+        external: true
+    steam-gift-redis:
+        external: true
+
+services:
+    steam-gift-nginx:
+        image: nginx:alpine
+        ports:
+            - '80:80'
+            - '8080:8080'
+        container_name: 'steam-gift-nginx'
+        restart: always
+        volumes:
+            - ./nginx:/etc/nginx/conf.d
+            - ./logs:/var/log/nginx/
+            - ../dist/apps/client:/var/www/client/public
+            - ../dist/apps/client-panel:/var/www/client/panel
+        networks:
+            - steam-gift-network
+        depends_on:
+            - steam-gift-server
+
+    steam-gift-server:
+        image: node:18.18.0
+        user: ${CURRENT_UID}
+        container_name: 'steam-gift-server-service'
+        restart: always
+        env_file:
+            - ../env/.env.prod
+        environment:
+            - POSTGRES_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@steam-gift-postgres:${POSTGRES_INTERNAL_PORT}/${POSTGRES_DATABASE}?schema=public
+            - REDIS_URL=redis://${REDIS_HOST}:${REDIS_INTERNAL_PORT}
+        working_dir: '/app'
+        volumes:
+            - ./../:/app
+        networks:
+            - steam-gift-network
+        command: 'node dist/apps/server/main.js'
+        tty: true
+        depends_on:
+            - steam-gift-redis
+            - steam-gift-postgres
+
+    steam-gift-postgres:
+        image: 'postgres:13'
+        container_name: 'steam-gift-postgres'
+        restart: always
+        environment:
+            - POSTGRES_USER=${POSTGRES_USER}
+            - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+            - POSTGRES_DB=${POSTGRES_DATABASE}
+        env_file:
+            - ../env/.env.prod
+        ports:
+            - '${POSTGRES_PORT}:${POSTGRES_INTERNAL_PORT}'
+        volumes:
+            - steam-gift-postgresql:/var/lib/postgresql/data
+        networks:
+            - steam-gift-network
+
+    steam-gift-redis:
+        image: redis:6.2.7
+        container_name: 'steam-gift-redis'
+        restart: always
+        env_file:
+            - ../env/.env.prod
+        ports:
+            - '${REDIS_PORT}:${REDIS_INTERNAL_PORT}'
+        volumes:
+            - steam-gift-redis:/root/redis
+        networks:
+            - steam-gift-network

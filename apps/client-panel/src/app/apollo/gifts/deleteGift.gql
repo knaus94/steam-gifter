@@ -1,0 +1,5 @@
+mutation DeleteGift($digisellerProductDeleteId: Int!) {
+	panelDigisellerProductDelete(id: $digisellerProductDeleteId) {
+		result
+	}
+}

@@ -1,0 +1,37 @@
+query GetPanelTransactions($args: InputTransactionPanelArgs!) {
+	panelTransactions(args: $args) {
+		total
+		records {
+			updatedAt
+			steamId64
+			status
+			sendAttempts
+			region
+			profileLink
+			paymentDetails {
+				uniqCode
+				invoice
+			}
+			id
+			edition {
+				bots {
+					region {
+						id
+						name
+					}
+					botRegions
+				}
+				id
+				name
+				product {
+					name
+				}
+			}
+			createdAt
+			bot {
+				accountName
+				login
+			}
+		}
+	}
+}

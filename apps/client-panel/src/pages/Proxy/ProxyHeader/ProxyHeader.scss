@@ -1,0 +1,26 @@
+.form-proxy {
+    margin-top: 24px;
+    margin-bottom: 24px;
+
+    &__item {
+        margin-bottom: 10px;
+    }
+    .ant-input-number {
+        width: 100%;
+    }
+    .ant-form-item-label {
+        font-weight: 600;
+        font-size: 16px;
+    }
+}
+
+.ant-modal {
+    .ant-modal-title {
+        font-size: 18px;
+    }
+}
+
+.proxy__header {
+    display: flex;
+    justify-content: space-between;
+}

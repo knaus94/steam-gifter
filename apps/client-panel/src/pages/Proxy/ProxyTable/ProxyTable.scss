@@ -1,0 +1,29 @@
+.proxy-table {
+	margin-top: 24px;
+	&__sort {
+		cursor: pointer;
+		transition: color 0.3s ease;
+		display: flex;
+		align-items: center;
+		svg {
+			margin-left: 5px;
+		}
+		&:hover {
+			color: #1677ff;
+			transition: color 0.3s ease;
+		}
+	}
+}
+.proxy__valid {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: green;
+}
+
+.proxy__no-valid {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: red;
+}

@@ -1,0 +1,33 @@
+.toast {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    width: 371px;
+
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: #f3f7ff;
+    border-radius: 8px;
+    border: 1px solid #34373c4d;
+    svg {
+        margin-right: 16px;
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    &__title {
+        color: #fe4133;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 120%;
+    }
+    &__text {
+        color: #34373c;
+        font-size: 12px;
+        line-height: 120%;
+        font-weight: 600;
+    }
+}

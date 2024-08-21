@@ -1,0 +1,915 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ObjectOKDto {
+  result: String!
+}
+
+type ObjectTranslationDto {
+  en: String
+  ru: String
+}
+
+type ObjectUserDto {
+  id: Int!
+  email: String!
+}
+
+type ObjectUserPanelDto {
+  id: Int!
+  email: String!
+}
+
+type ObjectAuthLogInDto {
+  user: ObjectUserDto!
+  token: String!
+  expiresAt: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type ObjectBotStatusEventDto {
+  botId: Int!
+  newStatus: BotStatusEnumType!
+  errCode: BotErrCodeEnumType
+  errMsg: String
+}
+
+enum BotStatusEnumType {
+  STARTING
+  RUNNING
+  STOPPED
+  ERROR
+}
+
+enum BotErrCodeEnumType {
+  AUTHENTICATION_FAILED
+  DISCONNECTED
+  ACCOUNT_LIMITATIONS
+}
+
+type ObjectBotDto {
+  id: Int!
+  accountName: String!
+  avatarUrl: String
+  region: RegionCodeEnumType!
+  steamId64: String!
+}
+
+enum RegionCodeEnumType {
+  UA
+  RU
+  KZ
+  TR
+  US
+  EU
+  AR
+}
+
+type ObjectProxyPanelSortArgs {
+  field: ProxyPanelSortByEnumType!
+  type: SortEnumType!
+}
+
+enum ProxyPanelSortByEnumType {
+  id
+  bots
+}
+
+enum SortEnumType {
+  desc
+  asc
+}
+
+type ObjectProxyPanelDto {
+  id: Int!
+  address: String!
+  port: Int!
+  username: String
+  password: String
+  isValid: Boolean!
+  countBots: Int!
+}
+
+type ObjectProxyPanelPaginatedDto {
+  records: [ObjectProxyPanelDto!]!
+  total: Int!
+}
+
+type ObjectBotPanelParseInfoDto {
+  avatarUrl: String
+  accountName: String
+}
+
+type ObjectBotPanelSortArgs {
+  field: BotPanelSortEnumType!
+  type: SortEnumType!
+}
+
+enum BotPanelSortEnumType {
+  id
+}
+
+type ObjectBotPanelDto {
+  id: Int!
+  steamId64: String!
+  region: RegionCodeEnumType!
+  accountName: String!
+  login: String!
+  avatarUrl: String
+  sharedSecret: String!
+  balance: Float!
+  reservedBalance: Float!
+  status: BotStatusEnumType!
+  errCode: BotErrCodeEnumType
+  errMsg: String
+  password: String!
+  proxy: ObjectProxyPanelDto
+}
+
+type ObjectBotPanelPaginatedDto {
+  records: [ObjectBotPanelDto!]!
+  total: Int!
+}
+
+type ObjectConfigDto {
+  id: Int!
+  skypeLink: String
+  supportLink: String
+  telegramLogin: String
+  vkLink: String
+  email: String
+  discordLink: String
+}
+
+type ObjectDigisellerConfigPanelDto {
+  apiKey: String
+  editionSelectionFieldName: Translations!
+  id: Int!
+  profileLinkFieldName: Translations!
+  regionFieldName: Translations!
+  sellerId: Int
+  regions: [ObjectDigisellerRegionPanelDto!]!
+}
+
+"""
+The `Translations` Scalar type is used in GraphQL to represent a key-value pair where the key is a `String` representing a language code, and the value is also a `String`. This type of data is commonly used to store and transmit translations of text fragments into different languages.
+"""
+scalar Translations
+
+type ObjectDigisellerRegionPanelDto {
+  id: Int!
+  name: String!
+}
+
+type ObjectProductPanelSortArgs {
+  field: ProductPanelSortEnumType!
+  type: SortEnumType!
+}
+
+enum ProductPanelSortEnumType {
+  id
+}
+
+type ObjectProductPanelRegionPriceDto {
+  region: RegionCodeEnumType!
+  price: Float!
+}
+
+type ObjectProductPanelSteamInfoDto {
+  name: String
+  prices: [ObjectProductPanelRegionPriceDto!]!
+}
+
+type ObjectProductPanelDto {
+  id: Int!
+  name: String!
+  identifier: Int!
+  isBundle: Boolean!
+  autoSync: [RegionCodeEnumType!]!
+  prices: [ObjectProductPanelRegionPriceDto!]!
+}
+
+type ObjectProductPanelPaginatedDto {
+  records: [ObjectProductPanelDto!]!
+  total: Int!
+}
+
+type ObjectDigisellerProductInfoDto {
+  name: String!
+  preview: String
+  editionEnabled: Boolean!
+  editions: [String!]!
+}
+
+type ObjectDigisellerProductPanelSortArgs {
+  field: DigisellerProductPanelSortEnumType!
+  type: SortEnumType!
+}
+
+enum DigisellerProductPanelSortEnumType {
+  id
+  createdAt
+  updatedAt
+}
+
+type ObjectDigisellerProductEditionPanelArgs {
+  productId: Int!
+  name: String
+  isDefault: Boolean
+  bots: [ObjectDigisellerProductEditionBotPanelArgs!]!
+}
+
+type ObjectDigisellerProductEditionBotPanelDto {
+  region: ObjectDigisellerRegionPanelDto!
+  botRegions: [RegionCodeEnumType!]!
+}
+
+type ObjectDigisellerProductEditionBotPanelArgs {
+  regionId: Int!
+  botRegions: [RegionCodeEnumType!]!
+}
+
+type ObjectDigisellerProductPanelDto {
+  id: Int!
+  digisellerId: Int!
+  editionSelection: Boolean!
+  isDisabled: Boolean!
+  name: Translations!
+  previewUrl: String
+  editions: [ObjectDigisellerProductEditionPanelDto!]!
+  syncPrice: Boolean!
+  syncPricePercent: Int!
+  syncPriceRegion: RegionCodeEnumType!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type ObjectDigisellerProductPanelPaginatedDto {
+  records: [ObjectDigisellerProductPanelDto!]!
+  total: Int!
+}
+
+type ObjectDigisellerProductEditionPanelDto {
+  id: Int!
+  name: String
+  product: ObjectProductPanelDto!
+  bots: [ObjectDigisellerProductEditionBotPanelDto!]!
+  isDefault: Boolean!
+}
+
+type ObjectTelegramPanelConfigDto {
+  balanceChatId: String
+  balanceNotification: Boolean!
+  balanceThreshold: Int!
+  botToken: String
+  id: Int!
+  statusChangeChatId: String
+  statusChangeNotification: Boolean!
+  productPricesUpdatedChatId: String
+  productPricesUpdatedNotification: Boolean!
+}
+
+type ObjectTransactionStatusLogTransactionDto {
+  id: Int!
+}
+
+type ObjectTransactionStatusLogDto {
+  id: Int!
+  status: TransactionStatusEnumType!
+  event: TransactionEventEnumType
+  errMsg: String
+  createdAt: DateTime!
+  transaction: ObjectTransactionStatusLogTransactionDto!
+}
+
+enum TransactionStatusEnumType {
+  CREATED
+  FRIEND_REQUEST_SENT
+  PROCESS
+  SENT_GIFT
+  SUCCESS
+  ERROR
+}
+
+enum TransactionEventEnumType {
+  FAIL
+  FRIEND_TIMEOUT
+  FRIEND_REQUEST_CANCELED
+  PURCHASE_INFO_IS_NULL
+  PURCHASE_INFO_NOT_AVAILABLE
+  BOT_IS_OFFLINE
+  GIFT_DECLINED
+  PROFILE_LINK_NOT_VALID
+  FAILED_GET_STEAM_ID
+  BOT_NOT_FOUND
+  FRIEND_REQUEST_FAIL
+  RESEND
+}
+
+type ObjectTransactionPaymentDetailsDto {
+  invoice: Int!
+}
+
+type ObjectTransactionEditionDigisellerProductDto {
+  name: ObjectTranslationDto!
+  previewUrl: String
+}
+
+type ObjectTransactionEditionDto {
+  name: String
+  digisellerProduct: ObjectTransactionEditionDigisellerProductDto!
+}
+
+type ObjectTransactionDto {
+  id: Int!
+  profileLink: String!
+  bot: ObjectBotDto
+  logs: [ObjectTransactionStatusLogDto!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  status: TransactionStatusEnumType!
+  region: String
+  edition: ObjectTransactionEditionDto!
+  paymentDetails: ObjectTransactionPaymentDetailsDto!
+}
+
+type ObjectTransactionPanelStatusLogDto {
+  id: Int!
+  status: TransactionStatusEnumType!
+  event: TransactionEventEnumType
+  errMsg: String
+  createdAt: DateTime!
+}
+
+type ObjectTransactionPanelStatusLogPaginatedDto {
+  records: [ObjectTransactionPanelStatusLogDto!]!
+  total: Int!
+}
+
+type ObjectTransactionPanelSortArgs {
+  field: TransactionPanelSortEnumType!
+  type: SortEnumType!
+}
+
+enum TransactionPanelSortEnumType {
+  id
+  createdA
+  updatedAt
+  status
+}
+
+type ObjectTransactionPanelPaymentDetailsDto {
+  uniqCode: String!
+  invoice: Int!
+}
+
+type ObjectTransactionPanelDto {
+  id: Int!
+  profileLink: String!
+  bot: ObjectBotPanelDto
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  status: TransactionStatusEnumType!
+  region: String
+  sendAttempts: Int!
+  steamId64: String
+  paymentDetails: ObjectTransactionPanelPaymentDetailsDto!
+  edition: ObjectDigisellerProductEditionPanelDto!
+}
+
+type ObjectTransactionPanelPaginatedDto {
+  records: [ObjectTransactionPanelDto!]!
+  total: Int!
+}
+
+input InputOKDto {
+  result: String! = "OK"
+}
+
+input InputTranslationDto {
+  en: String
+  ru: String
+}
+
+input InputUserDto {
+  id: Int!
+  email: String!
+}
+
+input InputUserPanelDto {
+  id: Int!
+  email: String!
+}
+
+input InputAuthLogInDto {
+  user: InputUserDto!
+  token: String!
+  expiresAt: DateTime!
+}
+
+input InputBotStatusEventDto {
+  botId: Int!
+  newStatus: BotStatusEnumType!
+  errCode: BotErrCodeEnumType
+  errMsg: String
+}
+
+input InputBotDto {
+  id: Int!
+  accountName: String!
+  avatarUrl: String
+  region: RegionCodeEnumType!
+  steamId64: String!
+}
+
+input InputProxyPanelSortArgs {
+  field: ProxyPanelSortByEnumType!
+  type: SortEnumType!
+}
+
+input InputProxyPanelDto {
+  id: Int!
+  address: String!
+  port: Int!
+  username: String
+  password: String
+  isValid: Boolean!
+}
+
+input InputProxyPanelPaginatedDto {
+  records: [InputProxyPanelDto!]!
+  total: Int!
+}
+
+input InputBotPanelParseInfoDto {
+  avatarUrl: String
+  accountName: String
+}
+
+input InputBotPanelSortArgs {
+  field: BotPanelSortEnumType!
+  type: SortEnumType!
+}
+
+input InputBotPanelDto {
+  id: Int!
+  steamId64: String!
+  region: RegionCodeEnumType!
+  accountName: String!
+  login: String!
+  avatarUrl: String
+  sharedSecret: String!
+  balance: Float!
+  reservedBalance: Float!
+  status: BotStatusEnumType!
+  errCode: BotErrCodeEnumType
+  errMsg: String
+  password: String!
+  proxy: InputProxyPanelDto
+}
+
+input InputBotPanelPaginatedDto {
+  records: [InputBotPanelDto!]!
+  total: Int!
+}
+
+input InputConfigDto {
+  id: Int!
+  skypeLink: String
+  supportLink: String
+  telegramLogin: String
+  vkLink: String
+  email: String
+  discordLink: String
+}
+
+input InputDigisellerConfigPanelDto {
+  apiKey: String
+  editionSelectionFieldName: Translations!
+  id: Int!
+  profileLinkFieldName: Translations!
+  regionFieldName: Translations!
+  sellerId: Int
+  regions: [InputDigisellerRegionPanelDto!]!
+}
+
+input InputDigisellerRegionPanelDto {
+  id: Int!
+  name: String!
+}
+
+input InputProductPanelSortArgs {
+  field: ProductPanelSortEnumType!
+  type: SortEnumType!
+}
+
+input InputProductPanelRegionPriceDto {
+  region: RegionCodeEnumType!
+  price: Float!
+}
+
+input InputProductPanelSteamInfoDto {
+  name: String
+  prices: [InputProductPanelRegionPriceDto!]!
+}
+
+input InputProductPanelDto {
+  id: Int!
+  name: String!
+  identifier: Int!
+  isBundle: Boolean!
+  autoSync: [RegionCodeEnumType!]!
+}
+
+input InputProductPanelPaginatedDto {
+  records: [InputProductPanelDto!]!
+  total: Int!
+}
+
+input InputDigisellerProductInfoDto {
+  name: String!
+  preview: String
+  editionEnabled: Boolean!
+  editions: [String!]!
+}
+
+input InputDigisellerProductPanelSortArgs {
+  field: DigisellerProductPanelSortEnumType!
+  type: SortEnumType!
+}
+
+input InputDigisellerProductEditionPanelArgs {
+  productId: Int!
+  name: String
+  isDefault: Boolean
+  bots: [InputDigisellerProductEditionBotPanelArgs!]!
+}
+
+input InputDigisellerProductEditionBotPanelDto {
+  region: InputDigisellerRegionPanelDto!
+  botRegions: [RegionCodeEnumType!]!
+}
+
+input InputDigisellerProductEditionBotPanelArgs {
+  regionId: Int!
+  botRegions: [RegionCodeEnumType!]!
+}
+
+input InputDigisellerProductPanelDto {
+  id: Int!
+  digisellerId: Int!
+  editionSelection: Boolean!
+  isDisabled: Boolean!
+  name: Translations!
+  previewUrl: String
+  editions: [InputDigisellerProductEditionPanelDto!]!
+  syncPrice: Boolean!
+  syncPricePercent: Int!
+  syncPriceRegion: RegionCodeEnumType!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+input InputDigisellerProductPanelPaginatedDto {
+  records: [InputDigisellerProductPanelDto!]!
+  total: Int!
+}
+
+input InputDigisellerProductEditionPanelDto {
+  id: Int!
+  name: String
+  product: InputProductPanelDto!
+  bots: [InputDigisellerProductEditionBotPanelDto!]!
+  isDefault: Boolean!
+}
+
+input InputTelegramPanelConfigDto {
+  balanceChatId: String
+  balanceNotification: Boolean!
+  balanceThreshold: Int!
+  botToken: String
+  id: Int!
+  statusChangeChatId: String
+  statusChangeNotification: Boolean!
+  productPricesUpdatedChatId: String
+  productPricesUpdatedNotification: Boolean!
+}
+
+input InputTransactionStatusLogTransactionDto {
+  id: Int!
+}
+
+input InputTransactionStatusLogDto {
+  id: Int!
+  status: TransactionStatusEnumType!
+  event: TransactionEventEnumType
+  errMsg: String
+  createdAt: DateTime!
+  transaction: InputTransactionStatusLogTransactionDto!
+}
+
+input InputTransactionPaymentDetailsDto {
+  invoice: Int!
+}
+
+input InputTransactionEditionDigisellerProductDto {
+  name: InputTranslationDto!
+  previewUrl: String
+}
+
+input InputTransactionEditionDto {
+  name: String
+  digisellerProduct: InputTransactionEditionDigisellerProductDto!
+}
+
+input InputTransactionDto {
+  id: Int!
+  profileLink: String!
+  bot: InputBotDto
+  logs: [InputTransactionStatusLogDto!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  status: TransactionStatusEnumType!
+  region: String
+  edition: InputTransactionEditionDto!
+  paymentDetails: InputTransactionPaymentDetailsDto!
+}
+
+input InputTransactionPanelStatusLogDto {
+  id: Int!
+  status: TransactionStatusEnumType!
+  event: TransactionEventEnumType
+  errMsg: String
+  createdAt: DateTime!
+}
+
+input InputTransactionPanelStatusLogPaginatedDto {
+  records: [InputTransactionPanelStatusLogDto!]!
+  total: Int!
+}
+
+input InputTransactionPanelSortArgs {
+  field: TransactionPanelSortEnumType!
+  type: SortEnumType!
+}
+
+input InputTransactionPanelPaymentDetailsDto {
+  uniqCode: String!
+  invoice: Int!
+}
+
+input InputTransactionPanelDto {
+  id: Int!
+  profileLink: String!
+  bot: InputBotPanelDto
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  status: TransactionStatusEnumType!
+  region: String
+  sendAttempts: Int!
+  steamId64: String
+  paymentDetails: InputTransactionPanelPaymentDetailsDto!
+  edition: InputDigisellerProductEditionPanelDto!
+}
+
+input InputTransactionPanelPaginatedDto {
+  records: [InputTransactionPanelDto!]!
+  total: Int!
+}
+
+type Query {
+  config: ObjectConfigDto!
+  panelConfig: ObjectConfigDto!
+  me: ObjectUserPanelDto!
+  panelDigisellerConfig: ObjectDigisellerConfigPanelDto!
+  panelDigisellerRegions: [ObjectDigisellerRegionPanelDto!]!
+  panelDigisellerProducts(args: InputDigisellerProductPanelArgs!): ObjectDigisellerProductPanelPaginatedDto!
+  panelDigisellerProduct(id: Int!): ObjectDigisellerProductPanelDto
+  panelDigisellerParseProductInfo(digisellerId: Int!): ObjectDigisellerProductInfoDto!
+  panelParseBotInfo(steamId64: String!): ObjectBotPanelParseInfoDto!
+  panelBots(args: InputBotPanelArgs!): ObjectBotPanelPaginatedDto!
+  panelBot(id: Int!): ObjectBotPanelDto
+  panelCountBotsOnline: Int!
+  panelProxies(args: InputProxyPanelArgs!): ObjectProxyPanelPaginatedDto!
+  transaction(args: InputTransactionArgs!): ObjectTransactionDto!
+  panelTransactions(args: InputTransactionPanelArgs!): ObjectTransactionPanelPaginatedDto!
+  panelTransaction(transactionId: Int!): ObjectTransactionPanelDto
+  panelTransactionLogs(transactionId: Int!, args: InputPaginationArgs!): ObjectTransactionPanelStatusLogPaginatedDto!
+  panelTelegramConfig: ObjectTelegramPanelConfigDto!
+  panelProducts(args: InputProductPanelArgs!): ObjectProductPanelPaginatedDto!
+  panelProduct(productId: Int!): ObjectProductPanelDto
+  panelProductSteamPackageInfo(packageId: Int!): ObjectProductPanelSteamInfoDto!
+  panelProductSteamBundleInfo(bundleId: Int!): ObjectProductPanelSteamInfoDto!
+}
+
+input InputDigisellerProductPanelArgs {
+  skip: Int!
+  take: Int!
+  id: Int
+  digisellerId: Int
+  name: String
+  sort: InputDigisellerProductPanelSortArgs!
+  isDisabled: Boolean
+}
+
+input InputBotPanelArgs {
+  skip: Int!
+  take: Int!
+  steamId64: String
+  login: String
+  sort: InputBotPanelSortArgs!
+  status: BotStatusEnumType
+}
+
+input InputProxyPanelArgs {
+  skip: Int!
+  take: Int!
+  address: String
+  isValid: Boolean
+  sort: InputProxyPanelSortArgs!
+}
+
+input InputTransactionArgs {
+  uniqCode: String!
+}
+
+input InputTransactionPanelArgs {
+  skip: Int!
+  take: Int!
+  id: Int
+  uniqCode: String
+  invoice: Int
+  status: TransactionStatusEnumType
+  sort: InputTransactionPanelSortArgs!
+}
+
+input InputPaginationArgs {
+  skip: Int!
+  take: Int!
+}
+
+input InputProductPanelArgs {
+  skip: Int!
+  take: Int!
+  name: String
+  sort: InputProductPanelSortArgs!
+}
+
+type Mutation {
+  panelLogIn(args: InputAuthLogInArgs!): ObjectAuthLogInDto!
+  panelConfigUpdate(args: InputConfigPanelUpdateArgs!): ObjectOKDto!
+  panelUpdatePassword(args: InputUserPanelUpdatePasswordArgs!): ObjectOKDto!
+  panelDigisellerConfigUpdate(args: InputDigisellerConfigUpdatePanelArgs!): ObjectOKDto!
+  panelDigisellerProductCreate(args: InputDigisellerProductPanelCreateArgs!): ObjectDigisellerProductPanelDto!
+  panelDigisellerProductUpdate(id: Int!, args: InputDigisellerProductPanelUpdateArgs!): ObjectDigisellerProductPanelDto!
+  panelDigisellerProductDelete(id: Int!): ObjectOKDto!
+  panelDigisellerSyncPrices: ObjectOKDto!
+  panelBotCreate(args: InputBotPanelCreateArgs!): ObjectBotPanelDto!
+  panelBotUpdate(id: Int!, args: InputBotPanelUpdateArgs!): ObjectBotPanelDto!
+  panelDeleteBot(id: Int!): ObjectOKDto!
+  panelBotStart(botId: Int!): ObjectOKDto!
+  panelBotStop(botId: Int!): ObjectOKDto!
+  panelBotRestart(botId: Int!): ObjectOKDto!
+  panelStopAllBots: ObjectOKDto!
+  panelStartAllBots: ObjectOKDto!
+  panelRestartAllBots: ObjectOKDto!
+  panelCreateProxy(args: InputProxyPanelCreateArgs!): ObjectProxyPanelDto!
+  panelDeleteProxy(proxyId: Int!): ObjectOKDto!
+  updateTransactionProfileLink(args: InputTransactionUpdateProfileLinkArgs!): ObjectOKDto!
+  resendTransaction(args: InputTransactionArgs!): ObjectOKDto!
+  panelTransactionChangeBot(transactionId: Int!, botId: Int!): ObjectTransactionPanelDto!
+  panelTransactionResetAttempts(transactionId: Int!): ObjectOKDto!
+  panelTransactionUpdateStatus(transactionId: Int!, args: InputTransactionPanelUpdateStatusArgs!): ObjectOKDto!
+  panelTransactionUpdateProfileLink(transactionId: Int!, profileLink: String!): ObjectOKDto!
+  panelTelegramConfigUpdate(args: InputTelegramPanelConfigUpdateArgs!): ObjectOKDto!
+  panelProductForceUpdatePrices: ObjectOKDto!
+  panelProductCreate(args: InputProductPanelCreateArgs!): ObjectProductPanelDto!
+  panelProductUpdate(productId: Int!, args: InputProductPanelUpdateArgs!): ObjectProductPanelDto!
+  panelProductDelete(productId: Int!): ObjectOKDto!
+}
+
+input InputAuthLogInArgs {
+  email: String!
+  password: String!
+}
+
+input InputConfigPanelUpdateArgs {
+  skypeLink: String
+  supportLink: String
+  telegramLogin: String
+  vkLink: String
+  email: String
+  discordLink: String
+}
+
+input InputUserPanelUpdatePasswordArgs {
+  password: String!
+}
+
+input InputDigisellerConfigUpdatePanelArgs {
+  apiKey: String
+  editionSelectionFieldName: InputTranslationDto!
+  profileLinkFieldName: InputTranslationDto!
+  regionFieldName: InputTranslationDto!
+  sellerId: Int
+  regions: [String!]!
+}
+
+input InputDigisellerProductPanelCreateArgs {
+  digisellerId: Int!
+  editionSelection: Boolean!
+  isDisabled: Boolean!
+  name: InputTranslationDto!
+  syncPrice: Boolean
+  syncPricePercent: Int!
+  syncPriceRegion: RegionCodeEnumType!
+  previewUrl: String
+  editions: [InputDigisellerProductEditionPanelArgs!]!
+}
+
+input InputDigisellerProductPanelUpdateArgs {
+  digisellerId: Int!
+  editionSelection: Boolean!
+  isDisabled: Boolean!
+  name: InputTranslationDto!
+  syncPrice: Boolean!
+  syncPricePercent: Int!
+  syncPriceRegion: RegionCodeEnumType!
+  editions: [InputDigisellerProductEditionPanelArgs!]!
+  previewUrl: String
+}
+
+input InputBotPanelCreateArgs {
+  accountName: String!
+  login: String!
+  password: String!
+  region: RegionCodeEnumType!
+  sharedSecret: String!
+  steamId64: String!
+  proxyId: Int
+  avatarUrl: String
+}
+
+input InputBotPanelUpdateArgs {
+  accountName: String!
+  login: String!
+  password: String!
+  region: RegionCodeEnumType!
+  sharedSecret: String!
+  steamId64: String!
+  proxyId: Int
+  avatarUrl: String
+}
+
+input InputProxyPanelCreateArgs {
+  address: String!
+  port: Int!
+  username: String
+  password: String
+}
+
+input InputTransactionUpdateProfileLinkArgs {
+  uniqCode: String!
+  profileLink: String!
+}
+
+input InputTransactionPanelUpdateStatusArgs {
+  currentStatus: TransactionStatusEnumType!
+  newStatus: TransactionStatusEnumType!
+  event: TransactionEventEnumType
+}
+
+input InputTelegramPanelConfigUpdateArgs {
+  balanceChatId: String
+  balanceNotification: Boolean!
+  balanceThreshold: Int!
+  botToken: String
+  statusChangeChatId: String
+  statusChangeNotification: Boolean!
+  productPricesUpdatedChatId: String
+  productPricesUpdatedNotification: Boolean!
+}
+
+input InputProductPanelCreateArgs {
+  identifier: Int!
+  isBundle: Boolean!
+}
+
+input InputProductPanelUpdateArgs {
+  autoSync: [RegionCodeEnumType!]!
+  identifier: Int!
+  isBundle: Boolean!
+  name: String!
+  prices: [InputProductPanelRegionPriceDto!]!
+}
+
+type Subscription {
+  PanelBotStatusStream: ObjectBotStatusEventDto!
+  TransactionStatusStream(args: InputTransactionArgs!): ObjectTransactionStatusLogDto!
+  PanelTransactionStatusStream: ObjectTransactionStatusLogDto!
+}

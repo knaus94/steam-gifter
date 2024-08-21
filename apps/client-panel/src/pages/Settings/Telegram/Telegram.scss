@@ -1,0 +1,28 @@
+.telegram {
+	&__main-wrap {
+		display: flex;
+		gap: 24px;
+	}
+	&__left,
+	&__right {
+		width: 600px;
+		&-wrap {
+			display: flex;
+			gap: 24px;
+			width: 100%;
+		}
+	}
+	&__item {
+		width: 33%;
+	}
+	&__input-number {
+		width: 100%;
+	}
+	.ant-form-item-label {
+		padding-bottom: 5px;
+		label {
+			font-size: 14px;
+			font-weight: 500;
+		}
+	}
+}

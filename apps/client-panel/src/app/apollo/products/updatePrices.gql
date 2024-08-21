@@ -1,0 +1,5 @@
+mutation PanelProductForceUpdatePrices {
+	panelProductForceUpdatePrices {
+		result
+	}
+}

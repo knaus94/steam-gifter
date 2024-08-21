@@ -1,0 +1,34 @@
+mutation CreateGift($args: InputDigisellerProductPanelCreateArgs!) {
+	panelDigisellerProductCreate(args: $args) {
+		previewUrl
+		name
+		isDisabled
+		editions {
+			bots {
+				region {
+					id
+					name
+				}
+				botRegions
+			}
+			name
+			isDefault
+			product {
+				autoSync
+				id
+				identifier
+				isBundle
+				name
+				prices {
+					price
+					region
+				}
+			}
+		}
+		editionSelection
+		digisellerId
+		syncPrice
+		syncPricePercent
+		syncPriceRegion
+	}
+}

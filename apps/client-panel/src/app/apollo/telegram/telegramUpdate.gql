@@ -1,0 +1,5 @@
+mutation PanelTelegramConfigUpdate($args: InputTelegramPanelConfigUpdateArgs!) {
+	panelTelegramConfigUpdate(args: $args) {
+		result
+	}
+}

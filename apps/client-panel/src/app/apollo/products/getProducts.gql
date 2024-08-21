@@ -1,0 +1,16 @@
+query PanelProducts($args: InputProductPanelArgs!) {
+	panelProducts(args: $args) {
+		total
+		records {
+			autoSync
+			id
+			identifier
+			isBundle
+			name
+			prices {
+				price
+				region
+			}
+		}
+	}
+}

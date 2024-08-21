@@ -1,0 +1,5 @@
+mutation PanelDigisellerConfigUpdate($args: InputDigisellerConfigUpdatePanelArgs!) {
+	panelDigisellerConfigUpdate(args: $args) {
+		result
+	}
+}

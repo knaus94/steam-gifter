@@ -1,0 +1,38 @@
+.view-bot {
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+	&__list-item {
+		display: flex;
+		align-items: center;
+		&_img {
+			max-width: 100px;
+			max-height: 100px;
+			object-fit: cover;
+			border-radius: 50%;
+		}
+	}
+	&__list-title {
+		width: 135px;
+	}
+	&__list-data {
+		font-weight: 600;
+		font-size: 16px;
+	}
+	.default-img {
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		background-color: rgb(231, 229, 229);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		svg {
+			width: 60px;
+			height: 60px;
+		}
+	}
+}

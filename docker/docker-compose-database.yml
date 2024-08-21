@@ -1,0 +1,27 @@
+version: '3'
+
+volumes:
+    steam-gift-postgresql:
+        external: true
+
+services:
+    steam-gift-postgres:
+        deploy:
+            resources:
+                limits:
+                    cpus: '0.50'
+                    memory: '700M'
+                reservations:
+                    cpus: '0.30'
+                    memory: '300M'
+        image: 'postgres:13'
+        container_name: 'steam-gift-postgres'
+        environment:
+            - POSTGRES_USER=${POSTGRES_USER}
+            - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+            - POSTGRES_DB=${POSTGRES_DATABASE}
+        ports:
+            - '${POSTGRES_PORT}:${POSTGRES_INTERNAL_PORT}'
+        volumes:
+            - steam-gift-postgresql:/var/lib/postgresql/data
+        network_mode: 'bridge'

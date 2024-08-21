@@ -1,0 +1,60 @@
+.login {
+	width: 900px;
+	margin: 100px auto 0px auto;
+	border: 1px solid rgb(222, 222, 222);
+	padding: 100px;
+	border-radius: 12px;
+	background-color: #fff;
+	position: relative;
+
+	-webkit-animation-name: pulse;
+	animation-name: pulse;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+	50% {
+		-webkit-transform: scale3d(1.05, 1.05, 1.05);
+		transform: scale3d(1.05, 1.05, 1.05);
+	}
+	100% {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+}
+@keyframes pulse {
+	0% {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+	50% {
+		-webkit-transform: scale3d(1.05, 1.05, 1.05);
+		transform: scale3d(1.05, 1.05, 1.05);
+	}
+	100% {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+.recaptcha {
+	position: absolute;
+	bottom: 10px;
+	right: 20px;
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+	font-size: 10px;
+	&__link {
+		text-decoration: none;
+		&:visited {
+			color: rgb(0, 0, 238);
+		}
+	}
+}

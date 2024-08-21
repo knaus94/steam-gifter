@@ -1,0 +1,2 @@
+schema: 'generated/server/schema.gql'
+documents: ['apps/client/src/app/apollo/*.gql', 'apps/client-panel/src/app/apollo/**/*.gql']

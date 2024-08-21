@@ -1,0 +1,14 @@
+query PanelDigisellerConfig {
+	panelDigisellerConfig {
+		apiKey
+		editionSelectionFieldName
+		id
+		profileLinkFieldName
+		regionFieldName
+		sellerId
+		regions {
+			id
+			name
+		}
+	}
+}

@@ -1,0 +1,38 @@
+.view-transaction {
+	&__buttons {
+		display: flex;
+		gap: 24px;
+		margin-top: 16px;
+	}
+
+	.ant-list-bordered .ant-list-item {
+		.ant-typography:first-of-type {
+			width: 280px;
+		}
+		.ant-typography {
+			align-self: flex-start;
+			display: block;
+			width: 100%;
+		}
+	}
+	&__item.attemp {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		.ant-typography:nth-child(1) {
+			width: 223px !important;
+		}
+		.ant-typography:nth-child(2) {
+			width: auto;
+			margin-right: 30px;
+		}
+		button {
+			margin-right: auto;
+		}
+	}
+}
+
+.ant-list {
+	display: block !important;
+	margin-top: 24px;
+}

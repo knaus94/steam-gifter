@@ -1,0 +1,21 @@
+query PanelBots($args: InputBotPanelArgs!) {
+	panelBots(args: $args) {
+		total
+		records {
+			steamId64
+			status
+			login
+			id
+			balance
+			errCode
+			errMsg
+			proxy {
+				address
+				port
+				username
+				password
+				isValid
+			}
+		}
+	}
+}

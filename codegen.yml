@@ -1,0 +1,29 @@
+watch: true
+schema: 'generated/server/schema.gql'
+ignoreNoDocuments: true
+config:
+    scalars:
+        DateTime: Date
+        Translations: Partial<Record<LangEnum, Maybe<string>>>
+generates:
+    generated/client/graphql/types.ts:
+        documents: ['apps/client/src/app/apollo/**/*.gql', 'apps/client/src/app/apollo/*.gql']
+        config:
+            withHooks: true
+        plugins:
+            - typescript
+            - typescript-operations
+            - typescript-react-apollo
+            - add:
+                  content: "import { LangEnum } from '../../../libs/core/common/src'"
+
+    generated/client-panel/graphql/types.ts:
+        documents: ['apps/client-panel/src/app/apollo/**/*.gql', 'apps/client-panel/src/app/apollo/*.gql']
+        config:
+            withHooks: true
+        plugins:
+            - typescript
+            - typescript-operations
+            - typescript-react-apollo
+            - add:
+                  content: "import { LangEnum } from '../../../libs/core/common/src'"

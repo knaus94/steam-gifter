@@ -1,0 +1,13 @@
+mutation PanelProductCreate($args: InputProductPanelCreateArgs!) {
+	panelProductCreate(args: $args) {
+		prices {
+			price
+			region
+		}
+		name
+		isBundle
+		identifier
+		id
+		autoSync
+	}
+}

@@ -1,0 +1,6 @@
+query PanelDigisellerRegions {
+	panelDigisellerRegions {
+		id
+		name
+	}
+}

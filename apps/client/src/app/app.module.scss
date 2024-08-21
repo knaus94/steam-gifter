@@ -1,0 +1,97 @@
+/* Your styles goes here. */
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.skeleton {
+    .sk-available {
+        position: relative;
+        &::after {
+            position: absolute !important;
+            left: -1px !important;
+            top: -1px !important;
+            right: -1px !important;
+            bottom: -1px !important;
+            width: 105% !important;
+            height: 105% !important;
+            content: '' !important;
+            display: block !important;
+            z-index: 333 !important;
+            background-image: linear-gradient(90deg, rgba(232, 238, 250, 1) 0px, #ffffff 70px, rgba(232, 238, 250, 1) 120px) !important;
+            background-size: 600px;
+            background-color: #fff;
+            animation: shine-lines 2s infinite;
+            animation-iteration-count: infinite;
+            animation-fill-mode: revert;
+            border-radius: 5px !important;
+        }
+        &::before {
+            display: none !important;
+        }
+    }
+}
+.skeleton-failed {
+    .sk-available {
+        &::after {
+            background-image: linear-gradient(
+                90deg,
+                rgba(254, 65, 51, 0.1) 0px,
+                rgba(253, 153, 146, 0.2) 70px,
+                rgba(254, 65, 51, 0.15) 120px
+            ) !important;
+            background-color: #fff !important;
+        }
+    }
+}
+
+@keyframes shine-lines {
+    0% {
+        background-position: 0%;
+    }
+    50% {
+        background-position: 200%;
+    }
+    100% {
+        background-position: 0%;
+    }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+    opacity: 0;
+}
+
+.err-btn {
+    background: #fe4133;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 16px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 120%;
+    color: #fff;
+    outline: none;
+    border: none;
+    margin: 0 auto;
+    transition: 0.2s;
+    cursor: pointer;
+    svg {
+        margin-right: 8px;
+    }
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+button[disabled] {
+    opacity: 0.6 !important;
+    cursor: not-allowed;
+    &:hover {
+        opacity: 0.6 !important;
+    }
+}

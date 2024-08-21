@@ -1,0 +1,10 @@
+.main-wrap {
+    display: flex;
+    gap: 32px;
+    margin-top: 32px;
+    .banners-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+}

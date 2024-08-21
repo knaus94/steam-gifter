@@ -1,0 +1,20 @@
+{
+	"name": "sdk-prisma-server",
+	"$schema": "../../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "libs/sdk-prisma/server/src",
+	"projectType": "library",
+	"targets": {
+		"lint": {
+			"executor": "@nx/linter:eslint",
+			"outputs": [
+				"{options.outputFile}"
+			],
+			"options": {
+				"lintFilePatterns": [
+					"libs/sdk-prisma/server/**/*.ts"
+				]
+			}
+		}
+	},
+	"tags": []
+}

@@ -1,0 +1,6 @@
+mutation UpdateGift($digisellerProductUpdateId: Int!, $args: InputDigisellerProductPanelUpdateArgs!) {
+	panelDigisellerProductUpdate(id: $digisellerProductUpdateId, args: $args) {
+		id
+		name
+	}
+}

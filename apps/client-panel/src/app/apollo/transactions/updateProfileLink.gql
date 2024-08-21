@@ -1,0 +1,5 @@
+mutation PanelTransactionUpdateProfileLink($transactionId: Int!, $profileLink: String!) {
+	panelTransactionUpdateProfileLink(transactionId: $transactionId, profileLink: $profileLink) {
+		result
+	}
+}

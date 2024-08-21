@@ -1,0 +1,310 @@
+{
+	"login": {
+		"username": "Логин",
+		"password": "Пароль",
+		"enter": "Войти",
+		"registration": "Зарегистрироваться",
+		"validation_email": "Введите Вашу почту",
+		"validation_password": "Введите Ваш пароль"
+	},
+	"header": {
+		"title": "Панель администратора",
+		"exit": "Выйти",
+		"left": "Осталось дней: ",
+		"add": "Продлить"
+	},
+	"navigation": {
+		"proxy": "Прокси",
+		"bots": "Боты",
+		"settings": "Настройки",
+		"products": "Игры",
+		"gifts": "Гифты",
+		"transactions": "Транзакции"
+	},
+	"price_updated_sended": "Запрос на обновление цен отправлен",
+	"error_validation": "Заполните обязательное поле",
+	"proxy": {
+		"create": {
+			"title": "Создать прокси",
+			"address": "IP адрес",
+			"port": "Порт",
+			"username": "Логин",
+			"password": "Пароль",
+			"counts_bot": "Боты",
+			"actions": "Действия",
+			"create": "Создать",
+			"back": "Отмена",
+			"search": "Введите IP адрес",
+			"delete": "Удалить",
+			"id": "ID",
+			"status": "Статус"
+		},
+		"pagination": "на странице",
+		"delete": {
+			"confirm_delete": "Вы уверенны?",
+			"yes": "Да",
+			"no": "Нет"
+		}
+	},
+	"bots": {
+		"buttons": {
+			"start_all": "Запустить все",
+			"stop_all": "Остановить все",
+			"restart_all": "Перезапустить все"
+		},
+		"create": {
+			"title": "Создать бота",
+			"account_name": "Название аккаунта",
+			"login": "Логин",
+			"password": "Пароль",
+			"proxy_id": "Прокси",
+			"region": "Регион",
+			"shared_secret": "Shared secret",
+			"steam_id": "Steam Id",
+			"parce": "Получить информацию",
+			"error": "Данные не найдены",
+			"avatar": "Аватар"
+		},
+		"table": {
+			"login": "Логин",
+			"balance": "Баланс",
+			"id": "ID",
+			"proxy": "Прокси",
+			"status": "Статус",
+			"steam": "Steam Id"
+		},
+		"status": {
+			"starting": "Запуск...",
+			"running": "Запущен",
+			"stopped": "Остановлен",
+			"error": "Ошибка"
+		},
+		"errors": {
+			"authentication_failed": "Ошибка аутентификации",
+			"disconnected": "Отключен",
+			"account_limitations": "Аккаунт ограничен"
+		},
+		"actions": {
+			"title": "Действия",
+			"start": "Запустить",
+			"stop": "Остановить",
+			"restart": "Перезапустить",
+			"delete": "Удалить",
+			"edit": "Редактировать",
+			"view": "Просмотреть"
+		},
+		"ok": "Процесс запущен",
+		"delete": {
+			"title": "Удаление бота",
+			"text": "Вы уверенны, что хотите удалить бота {{name}}?",
+			"btn": "Удалить"
+		},
+		"search": "Поиск",
+		"reset": "Сбросить",
+		"view": {
+			"title": "Просмотр бота",
+			"main_balance": "Основной баланс",
+			"res_balance": "Резерв",
+			"status": "Статус",
+			"login": "Логин",
+			"username": "Ник",
+			"avatar": "Аватар",
+			"pass": "Пароль",
+			"steam_id": "Steam Id",
+			"key": "Shared secret",
+			"region": "Регион",
+			"proxy": "Прокси"
+		},
+		"edit": {
+			"title": "Редактировать бота",
+			"confirm": "Сохранить",
+			"format": "Формат: JPEG, PNG, Размер файла: до 10 МБ.",
+			"err_type": "Допустимые типы файлов: JPEG и PNG",
+			"err_size": "Максимальный размер файла 10 МБ",
+			"upload": "Загрузить"
+		}
+	},
+	"not_found": "Извините, страница не найдена.",
+	"back": "Вернуться на главную",
+	"save": "Сохранить",
+	"settings": {
+		"config": "Общее",
+		"digiseller": "Digiseller",
+		"telegram": "Телеграм",
+		"pass": "Смена пароля",
+		"success": "Данные успешно обновлены",
+		"config_data": {
+			"telegram": "Телеграм",
+			"discord": "Дискорд",
+			"email": "Email",
+			"skype": "Скайп",
+			"support": "Поддержка",
+			"vk": "Вконтакте"
+		},
+		"digiseller_data": {
+			"api": "Ключ API",
+			"edition": "Название поля Издание",
+			"profile": "Название поля Ссылка на профиль",
+			"region": "Название поля Регион",
+			"regions": "Регионы",
+			"seller": "ID продавца",
+			"add": "Добавить регион",
+			"error": "Добавьте хотя бы 1 регион",
+			"supplier": "Обработчик"
+		},
+		"telegram_data": {
+			"token": "Токен бота",
+			"first": "Изменение баланса ботов",
+			"second": "Изменение статуса ботов",
+			"chat": "ID чата",
+			"notification": "Уведомления",
+			"threshold": "Предел баланса",
+			"price_id": "Изменение цен игр в Steam"
+		},
+		"change": {
+			"pass": "Пароль",
+			"pass_placeholder": "Введите пароль",
+			"pass_repeat": "Повторите пароль",
+			"pass_repeat_placeholder": "Повторите пароль",
+			"count": "Минимум 6 символов",
+			"big": "Минимум 1 большая буква",
+			"little": "Минимум 1 маленькая буква",
+			"int": "Минимум 1 цифра",
+			"pass_validation": "Введите пароль в нужном формате",
+			"pass_repeat_validation": "Пароли не совпадают"
+		},
+		"tooltip": "ОСТОРОЖНО! Обновление нейма производит к пересозданию, которое может повлечь за собой удаление уже существующих настроек с данным регионом."
+	},
+	"products": {
+		"create": {
+			"title": "Добавить игру",
+			"name": "Название",
+			"bundle": "Бандл",
+			"id": "Идентификатор",
+			"get_price": "Получить цены",
+			"regions": "Регионы",
+			"auto": "Автообновление",
+			"prices": "Цены",
+			"check_prices": "Просмотреть цены",
+			"synk": "Регионы автообновления"
+		},
+		"delete": {
+			"title": "Удаление игры",
+			"text": "Вы уверенны, что хотите удалить игру {{name}}?"
+		},
+		"edit": "Редактировать игру",
+		"select_all": "Выбрать все",
+		"force_price_update": "Обновить цены"
+	},
+	"gifts": {
+		"create": {
+			"title": "Создать гифт",
+			"name": "Название",
+			"digiseller_id": "Digiseller ID",
+			"editions": "Версии",
+			"disabled": "Недоступен",
+			"avatar": "Обложка",
+			"regions_placeholder": "Регионы ботов",
+			"add_region": "Добавить регион",
+			"add_edition": "Добавить версию",
+			"delete_edition": "Удалить версию",
+			"name_placeholder": "Название версии",
+			"game_placeholder": "Выберите игру",
+			"error": "Должен быть добавлен хотя бы 1 регион",
+			"error_game": "Выберите игру",
+			"error_name": "Введите имя гифта",
+			"sync_price": "Автоматическое регулирование цен",
+			"set_price": "Установить цену в",
+			"set_price_steam": "от цены в Steam для региона",
+			"for_region": "для региона",
+			"default": "Основная",
+			"error_default": "Выберите версию по умолчанию",
+			"sync": "Включено"
+		},
+		"title": "Редактирование гифта",
+		"last_update": "Последнее редактирование",
+		"sync_price": "Синхронизировать цены",
+		"sync_price_sended": "Запрос на синхронизацию цен отправлен",
+		"table": {
+			"id": "ID",
+			"avatar": "Картинка",
+			"digi": "Digiseller ID",
+			"name": "Название",
+			"created": "Время создания",
+			"updated": "Время редактирования",
+			"status": "Статус",
+			"false": "Включен",
+			"true": "Выключен",
+			"actions": "Действия"
+		}
+	},
+	"buttons": {
+		"back": "Назад",
+		"create": "Создать",
+		"save": "Сохранить"
+	},
+	"transaction": {
+		"table": {
+			"id": "ID",
+			"uniq_code": "Уникальный код",
+			"status": "Статус",
+			"gift": "Гифт",
+			"bot": "Бот",
+			"created": "Создана",
+			"actions": "Действия",
+			"updated": "Обновлена",
+			"event": "Событие"
+		},
+		"status": {
+			"error": "Ошибка",
+			"created": "Создана",
+			"friend_request_sent": "Отправлен запрос в друзья",
+			"process": "В очереди на выполнение",
+			"sent_gift": "Гифт отправлен",
+			"success": "Выполнено",
+			"title": "Статус"
+		},
+		"title": "Просмотр транзакции",
+		"change_status": "Изменить статус",
+		"change_bot": "Изменить бота",
+		"choose_status": "Выберите статус",
+		"choose_bot": "Выберите бота",
+		"choose_link": "Введите новую ссылку",
+		"event_label": "Событие",
+		"event": {
+			"fail": "Неудача",
+			"friend_timeout": "Таймаут запроса в друзья",
+			"purchase_info_is_null": "Пустая информация о покупке",
+			"purchase_info_not_available": "Информация о покупке недоступна",
+			"bot_is_offline": "Бот оффлайн",
+			"gift_declined": "Гифт отклонён",
+			"profile_link_not_valid": "Неверный формат ссылки на профиль",
+			"failed_get_steam_id": "Не удалось получить SteamID",
+			"bot_not_found": "Бот недоступен",
+			"friend_request_fail": "Не удалось отправить запрос в друзья",
+			"resend": "Переотправка гифта",
+			"info": {
+				"id": "id",
+				"status": "Статус",
+				"invoice": "Инвойс",
+				"uniq_code": "Уникальный код",
+				"user_link": "Ссылка на профиль",
+				"bot": "Бот",
+				"created": "Создана",
+				"updated": "Обновлена",
+				"gift": "Гифт",
+				"steam_id": "Steam Id",
+				"region": "Регион",
+				"attemp": "Осталось переотправок"
+			}
+		},
+		"success_bot": "Бот успешно обновлен",
+		"success_status": "Статус успешно обновлен"
+	},
+	"copy": "Скопировать",
+	"copied": "Скопировано",
+	"recaptcha": {
+		"code": "Ошибка капчи",
+		"message": "Не удалось пройти капчу. Попробуйте еще раз."
+	}
+}

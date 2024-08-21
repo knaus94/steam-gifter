@@ -1,0 +1,5 @@
+mutation PanelConfigUpdate($args: InputConfigPanelUpdateArgs!) {
+	panelConfigUpdate(args: $args) {
+		result
+	}
+}

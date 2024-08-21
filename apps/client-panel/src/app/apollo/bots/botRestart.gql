@@ -1,0 +1,5 @@
+mutation PanelBotRestart($botId: Int!) {
+	panelBotRestart(botId: $botId) {
+		result
+	}
+}

@@ -1,0 +1,5 @@
+mutation UpdateTransactionProfileLink($args: InputTransactionUpdateProfileLinkArgs!) {
+    updateTransactionProfileLink(args: $args) {
+        result
+    }
+}

@@ -1,0 +1,40 @@
+query GetTransaction($args: InputTransactionArgs!) {
+	transaction(args: $args) {
+		id
+		createdAt
+		bot {
+			id
+			accountName
+			avatarUrl
+		}
+		logs {
+			id
+			event
+			status
+			createdAt
+		}
+
+		edition {
+			digisellerProduct {
+				name {
+					en
+					ru
+				}
+				previewUrl
+			}
+		}
+		profileLink
+		region
+		paymentDetails {
+			invoice
+		}
+	}
+	config {
+		telegramLogin
+		discordLink
+		email
+		skypeLink
+		supportLink
+		vkLink
+	}
+}

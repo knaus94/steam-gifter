@@ -1,0 +1,8 @@
+subscription BotStatusStream {
+	PanelBotStatusStream {
+		botId
+		errCode
+		errMsg
+		newStatus
+	}
+}

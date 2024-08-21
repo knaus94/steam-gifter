@@ -1,0 +1,5 @@
+mutation DeleteBot($deleteBotId: Int!) {
+	panelDeleteBot(id: $deleteBotId) {
+		result
+	}
+}

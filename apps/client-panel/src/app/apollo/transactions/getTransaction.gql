@@ -1,0 +1,28 @@
+query PanelTransaction($transactionId: Int!) {
+	panelTransaction(transactionId: $transactionId) {
+		updatedAt
+		steamId64
+		status
+		sendAttempts
+		region
+		profileLink
+		paymentDetails {
+			uniqCode
+			invoice
+		}
+		id
+		edition {
+			product {
+				name
+			}
+			name
+		}
+		createdAt
+		bot {
+			id
+			accountName
+			login
+			steamId64
+		}
+	}
+}

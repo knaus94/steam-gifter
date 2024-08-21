@@ -1,0 +1,23 @@
+.sidebar {
+    background-color: #fff;
+    border-radius: 12px;
+    max-width: 296px;
+    padding: 20px;
+    flex: 1 0 auto;
+    overflow-y: auto;
+    .ant-menu-light.ant-menu-root.ant-menu-inline {
+        border-inline-end: none;
+    }
+    .ant-menu-item {
+        padding-right: 24px;
+        width: 200px;
+        .icon {
+            width: 24px;
+            margin-left: -5px;
+            margin-right: 0px;
+        }
+        svg {
+            margin-right: 5px;
+        }
+    }
+}

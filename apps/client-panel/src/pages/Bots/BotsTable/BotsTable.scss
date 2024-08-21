@@ -1,0 +1,16 @@
+.bots__tooltip {
+	display: flex;
+	flex-direction: column;
+	&-title {
+		margin-bottom: 15px;
+	}
+}
+
+.bots-table {
+	margin-top: 24px;
+}
+
+.bots__delete {
+	color: black;
+	font-size: 16px;
+}

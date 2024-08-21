@@ -1,0 +1,12 @@
+query PanelTransactionLogs($transactionId: Int!, $args: InputPaginationArgs!) {
+	panelTransactionLogs(transactionId: $transactionId, args: $args) {
+		records {
+			status
+			id
+			event
+			errMsg
+			createdAt
+		}
+		total
+	}
+}

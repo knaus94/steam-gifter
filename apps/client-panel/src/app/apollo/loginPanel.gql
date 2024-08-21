@@ -1,0 +1,10 @@
+mutation PanelLogIn($args: InputAuthLogInArgs!) {
+	panelLogIn(args: $args) {
+		expiresAt
+		token
+		user {
+			email
+			id
+		}
+	}
+}

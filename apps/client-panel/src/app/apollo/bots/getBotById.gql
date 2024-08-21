@@ -1,0 +1,23 @@
+query PanelBot($panelBotId: Int!) {
+	panelBot(id: $panelBotId) {
+		id
+		status
+		steamId64
+		sharedSecret
+		reservedBalance
+		region
+		proxy {
+			address
+			port
+			username
+			password
+		}
+		password
+		login
+		errMsg
+		errCode
+		balance
+		avatarUrl
+		accountName
+	}
+}

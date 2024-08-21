@@ -1,0 +1,5 @@
+mutation ResetAttemp($transactionId: Int!) {
+	panelTransactionResetAttempts(transactionId: $transactionId) {
+		result
+	}
+}

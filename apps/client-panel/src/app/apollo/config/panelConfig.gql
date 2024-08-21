@@ -1,0 +1,11 @@
+query PanelConfig {
+	panelConfig {
+		id
+		email
+		discordLink
+		skypeLink
+		supportLink
+		telegramLogin
+		vkLink
+	}
+}

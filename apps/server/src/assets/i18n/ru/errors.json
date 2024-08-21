@@ -1,0 +1,36 @@
+{
+	"core": {
+		"unknown_error": "Что-то пошло не так...",
+		"validation_error": "Поля заполнены неправильно...",
+		"request_error": "Что-то пошло не так...",
+		"unexpected_error": "Что-то пошло не так...",
+		"forbidden": "Нет доступа",
+		"record_does_not_exist": "Запись не найдена",
+		"too_many_requests": "Слишком часто. Повторите через {nearestExpiryTime}с",
+		"recaptcha_validation_error": "Не удалось пройти проверку reCAPTCHA, попробуйте позже"
+	},
+	"auth": {
+		"unauthorized": "Авторизуйтесь!",
+		"forbidden": "Нет доступа",
+		"access_token_expired": "Истек срок действия сессии",
+		"login_error": "Неправильный логин или пароль",
+		"token_is_not_valid": "Неверный формат токена",
+		"subscription_expired": "Подписка истекла, доступ к сервису ограничен"
+	},
+	"transaction": {
+		"transaction_not_found": "Транзакция не найдена",
+		"transaction_getting_error": "Не удалось получить транзакцию",
+		"region_field_not_found": "Поле региона не найдено",
+		"region_invalid": "Регион не найден",
+		"steam_link_field_not_found": "Поле ссылки на профиль Steam не найдено",
+		"steam_link_not_valid": "Неверный формат ссылки на профиль Steam",
+		"already_have_transaction": "Прежде чем открывать новую транзакцию, закройте старую",
+		"product_not_found": "Товар не найден",
+		"edition_field_not_found": "Поле издания не найдено",
+		"edition_invalid": "Издание не найдено",
+		"invoice_duplicated": "Счет уже существует",
+		"bot_not_found": "Не удалось подобрать бота. Пожалуйста, свяжитесь с продавцом для решения проблемы",
+		"transaction_resend_limit": "Превышен лимит повторных отправок. Пожалуйста, свяжитесь с продавцом для решения проблемы",
+		"friend_request_cooldown": "Пожалуйста, подождите {nearestExpiryTime} секунд, что бы бот смог отправить вам запрос в друзья"
+	}
+}

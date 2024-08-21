@@ -1,0 +1,6 @@
+query ParseBotInfo($steamId64: String!) {
+	panelParseBotInfo(steamId64: $steamId64) {
+		accountName
+		avatarUrl
+	}
+}

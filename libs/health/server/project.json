@@ -1,0 +1,16 @@
+{
+	"name": "health-server",
+	"$schema": "../../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "libs/health/server/src",
+	"projectType": "library",
+	"targets": {
+		"lint": {
+			"executor": "@nx/eslint:lint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": ["libs/health/server/**/*.ts"]
+			}
+		}
+	},
+	"tags": []
+}

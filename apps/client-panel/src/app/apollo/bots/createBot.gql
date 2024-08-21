@@ -1,0 +1,11 @@
+mutation PanelBotCreate($args: InputBotPanelCreateArgs!) {
+	panelBotCreate(args: $args) {
+		steamId64
+		status
+		login
+		id
+		balance
+		errCode
+		errMsg
+	}
+}

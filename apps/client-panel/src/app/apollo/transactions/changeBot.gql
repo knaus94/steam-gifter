@@ -1,0 +1,8 @@
+mutation PanelTransactionChangeBot($botId: Int!, $transactionId: Int!) {
+	panelTransactionChangeBot(botId: $botId, transactionId: $transactionId) {
+		bot {
+			accountName
+			id
+		}
+	}
+}

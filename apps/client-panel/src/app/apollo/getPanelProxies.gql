@@ -1,0 +1,14 @@
+query GetPanelProxies($args: InputProxyPanelArgs!) {
+	panelProxies(args: $args) {
+		total
+		records {
+			address
+			countBots
+			id
+			password
+			port
+			username
+			isValid
+		}
+	}
+}

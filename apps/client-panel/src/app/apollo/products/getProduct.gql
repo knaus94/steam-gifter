@@ -1,0 +1,13 @@
+query PanelProduct($productId: Int!) {
+	panelProduct(productId: $productId) {
+		autoSync
+		id
+		identifier
+		isBundle
+		name
+		prices {
+			region
+			price
+		}
+	}
+}
